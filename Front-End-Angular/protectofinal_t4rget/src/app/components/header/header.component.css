@@ -1,3 +1,8 @@
 div {
     background-color: darkslateblue;
 }
+
+app-socialnet   {
+    float: right;
+    margin-top: 25px;
+}
