@@ -8,10 +8,13 @@
   height: 200px;
 }
 
-.btn-right {
-  display: flex;
+.btn-edit {
   align-self: flex-end;
 }
+/*.btn-right {
+  display: flex;
+  align-self: flex-end;
+}*/
 
 .fa-button,.fa {
   color: black;
@@ -80,4 +83,16 @@ button {
   border-top-left-radius: 3%;
   border-top-right-radius: 3%;
   margin-top: 15px;
+}
+
+#info-img {
+  display: flex;
+  position: absolute;
+  bottom: 220px;
+  left: 40px;
+
+}
+
+#info-pad {
+  margin-top: 50px;
 }

@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { LogoArgPComponent } from './components/logo-arg-p/logo-arg-p.component';
 import { SocialnetComponent } from './components/socialnet/socialnet.component';
 import { AcercaDeComponent } from './components/acercaDe/acercaDe.component';
+import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AcercaDeComponent } from './components/acercaDe/acercaDe.component';
     HeaderComponent,
     LogoArgPComponent,
     SocialnetComponent,
-    AcercaDeComponent
+    AcercaDeComponent,
+    ExperienciaComponent
   ],
   imports: [
     BrowserModule,
