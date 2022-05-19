@@ -1,9 +1,26 @@
 div {
     background-color: darkslateblue;
+    display: flex;
+    width: 100%;
 }
 
 app-socialnet   {
-    float: right;
     margin-top: 25px;
+    margin-right: 10px;
+    width: 100%;
+}
+
+#login {
+    margin-top: 27px;
+    margin-bottom: 20px;
     margin-right: 20px;
+    width: 70px;
+
+}
+
+button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px
 }

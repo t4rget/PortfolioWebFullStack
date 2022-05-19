@@ -2,5 +2,11 @@ img {
     width: 50px;
     /*background-color: white;*/
     height: 50px;
-    
+
+}
+
+div {
+  align-self: flex-end;
+  display: inline-flex;
+  float: right;
 }
