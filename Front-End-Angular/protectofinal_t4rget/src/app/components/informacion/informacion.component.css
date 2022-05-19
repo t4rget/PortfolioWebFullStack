@@ -28,29 +28,43 @@
   background-color: gray;
 }
 
-#info-img {
-  display: flex;
-}
-
 #info-data {
-  display: inline-flex;
+  display: flex;
   align-self: flex-end;
-
 }
 
-#info-pad {
-  /*display: block;*/
+#info-contact {
+  width: 80%;
 }
 
 #info-details {
+
   float: right;
   align-self: flex-end;
 }
+
+#data-exp,#data-edu {
+  display: flex;
+  align-self: content;
+}
+
 #img-exp {
-  weight: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 }
 #img-edu {
-  weight: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
+}
+
+h2{
+  align-self: right;
+}
+
+#info-actions {
+  margin-top: 10px;
+}
+
+button {
+  margin-right: 5px;
 }
