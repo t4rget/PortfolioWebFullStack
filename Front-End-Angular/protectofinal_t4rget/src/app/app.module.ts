@@ -9,7 +9,9 @@ import { SocialnetComponent } from './components/socialnet/socialnet.component';
 import { AcercaDeComponent } from './components/acercaDe/acercaDe.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 //  Importar ng-circle-progreso
-import { NgCircleProgressModule } from 'ng-circle-progress'      ;
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { HyssComponent } from './components/hyss/hyss.component';
+import { EducacionComponent } from './components/educacion/educacion.component'      ;
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress'      ;
     LogoArgPComponent,
     SocialnetComponent,
     AcercaDeComponent,
-    ExperienciaComponent
+    ExperienciaComponent,
+    HyssComponent,
+    EducacionComponent
   ],
   imports: [
     BrowserModule,
