@@ -8,6 +8,8 @@ import { LogoArgPComponent } from './components/logo-arg-p/logo-arg-p.component'
 import { SocialnetComponent } from './components/socialnet/socialnet.component';
 import { AcercaDeComponent } from './components/acercaDe/acercaDe.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
+//  Importar ng-circle-progreso
+import { NgCircleProgressModule } from 'ng-circle-progress'      ;
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    //  Especificar ng-circle-progress como una importación
+    NgCircleProgressModule.forRoot({}),
   ],
   providers: [],
   bootstrap: [AppComponent]
