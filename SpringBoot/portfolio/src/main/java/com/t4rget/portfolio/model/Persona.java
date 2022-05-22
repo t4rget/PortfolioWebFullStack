@@ -1,14 +1,21 @@
 package com.t4rget.portfolio.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
 
 @Getter @Setter //Metodos
+@Entity // Se define identidad de este modelo
 public class Persona {
     
     //Atributos
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String nombre;
     private String apellido;
