@@ -38,7 +38,7 @@ export class IniciarSesionComponent implements OnInit {
   onSalir(event:Event)
   {
     event.preventDefault;
-    this.ruta.navigate(['/portfolio']);
+    this.ruta.navigate(['/portfolio']);  /* ME QUEDE EN ESTA PARTE DEL VIDEO DE LA PROFE*/
   }
 
 
