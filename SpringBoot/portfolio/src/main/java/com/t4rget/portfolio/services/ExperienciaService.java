@@ -8,6 +8,6 @@ package com.t4rget.portfolio.services;
  *
  * @author jhon
  */
-public class PersonaService {
+public class ExperienciaService {
     
 }
