@@ -7,49 +7,55 @@ import javax.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
+// ANOTATIONS DE ENTIDAD Y USO DE LOMBOK PARA LOS GETTER Y SETTERS
 
-@Getter @Setter //Metodos
-@Entity // Se define identidad de este modelo
+@Entity
+@Getter @Setter
 public class Persona {
     
-    //Atributos
+    // ATRIBUTOS
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String nombre;
-    private String apellido;
-    private String direccion;
-    private String ciudad;
-    private String provincia;
-    private String pais;
-    private String titulo;
-    private String foto_perfil;
-    private String telefono;
-    private String email;
-    private String sobre_mi;
-    private String fecha_nac;
+    private String nombrePer;
+    private String apellidoPer;
+    private String direccionPer;
+    private String idciudadPer;
+    private String idprovinciaPer;
+    private String idpaisPer;
+    private String tituloPer;
+    private String fotoPerfilPer;
+    private String telefonoPer;
+    private String emailPer;
+    private String sobreMiPer;
+    private String fechaNacPer;
+    private int idUsuarioPer;
     
-    //Contructores
+    //CONSTRUCTOR VACIO
 
     public Persona() {
     }
 
-    public Persona(long id, String nombre, String apellido, String direccion, String ciudad, String provincia, String pais, String titulo, String foto_perfil, String telefono, String email, String sobre_mi, String fecha_nac) {
+    //CONTRUCTOR
+
+    public Persona(long id, String nombrePer, String apellidoPer, String direccionPer, String idciudadPer, String idprovinciaPer, String idpaisPer, String tituloPer, String fotoPerfilPer, String telefonoPer, String emailPer, String sobreMiPer, String fechaNacPer, int idUsuarioPer) {
         this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.direccion = direccion;
-        this.ciudad = ciudad;
-        this.provincia = provincia;
-        this.pais = pais;
-        this.titulo = titulo;
-        this.foto_perfil = foto_perfil;
-        this.telefono = telefono;
-        this.email = email;
-        this.sobre_mi = sobre_mi;
-        this.fecha_nac = fecha_nac;
+        this.nombrePer = nombrePer;
+        this.apellidoPer = apellidoPer;
+        this.direccionPer = direccionPer;
+        this.idciudadPer = idciudadPer;
+        this.idprovinciaPer = idprovinciaPer;
+        this.idpaisPer = idpaisPer;
+        this.tituloPer = tituloPer;
+        this.fotoPerfilPer = fotoPerfilPer;
+        this.telefonoPer = telefonoPer;
+        this.emailPer = emailPer;
+        this.sobreMiPer = sobreMiPer;
+        this.fechaNacPer = fechaNacPer;
+        this.idUsuarioPer = idUsuarioPer;
     }
+    
     
         
 }
