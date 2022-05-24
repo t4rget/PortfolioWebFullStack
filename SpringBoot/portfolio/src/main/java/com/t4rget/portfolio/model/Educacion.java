@@ -20,8 +20,8 @@ public class Educacion {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idEdu;
-    private String iniEdu;
-    private String finEdu;
+    private int iniEdu;
+    private int finEdu;
     private String tituloEdu;
     private int idPersonaEdu;
     private  int idInstitucionEdu;
@@ -33,7 +33,7 @@ public class Educacion {
     
     // CONSTRUCTOR
 
-    public Educacion(Long idEdu, String iniEdu, String finEdu, String tituloEdu, int idPersonaEdu, int idInstitucionEdu) {
+    public Educacion(Long idEdu, int iniEdu, int finEdu, String tituloEdu, int idPersonaEdu, int idInstitucionEdu) {
         this.idEdu = idEdu;
         this.iniEdu = iniEdu;
         this.finEdu = finEdu;
@@ -41,6 +41,8 @@ public class Educacion {
         this.idPersonaEdu = idPersonaEdu;
         this.idInstitucionEdu = idInstitucionEdu;
     }
+
+    
     
         
 }

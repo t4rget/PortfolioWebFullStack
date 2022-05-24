@@ -20,8 +20,8 @@ public class Experiencia {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idExp;
-    private String iniExp;
-    private String finExp;
+    private int iniExp;
+    private int finExp;
     private String descripcionExp;
     private int trabajoActExp;
     private  String idEmpresaExp;
@@ -30,7 +30,7 @@ public class Experiencia {
     
     // CONTRUCTOR
 
-    public Experiencia(Long idExp, String iniExp, String finExp, String descripcionExp, int trabajoActExp, String idEmpresaExp, String idCargoExp, String idTipoEmpleoExp) {
+    public Experiencia(Long idExp, int iniExp, int finExp, String descripcionExp, int trabajoActExp, String idEmpresaExp, String idCargoExp, String idTipoEmpleoExp) {
         this.idExp = idExp;
         this.iniExp = iniExp;
         this.finExp = finExp;
@@ -40,6 +40,8 @@ public class Experiencia {
         this.idCargoExp = idCargoExp;
         this.idTipoEmpleoExp = idTipoEmpleoExp;
     }
+
+ 
     
     // CONTRUCTOR VACIO
 
