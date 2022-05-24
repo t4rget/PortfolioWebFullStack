@@ -1,9 +1,14 @@
 package com.t4rget.portfolio.model;
 
+import java.io.Serializable;
+import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,12 +16,13 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter
-public class Persona {
+public class Persona implements  Serializable { //VER PARA QUE SIRVE EL SERIALIZABLE
     
     // ATRIBUTOS
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(unique = false, updatable = false)
     private long id;
     private String nombrePer;
     private String apellidoPer;
@@ -55,6 +61,17 @@ public class Persona {
         this.fechaNacPer = fechaNacPer;
         this.idUsuarioPer = idUsuarioPer;
     }
+    
+    // MAPEADO PARA LA VINCULACION, VER BIEN PARA QUE SIRVE
+    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idEdu")
+    private List<Educacion> educacionList;
+    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idApt")
+    private List<Aptitud> aptitudList;
+    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "idExp")
+    private  List<Experiencia> experienciaList;
     
     
         
