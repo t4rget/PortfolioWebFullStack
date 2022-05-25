@@ -2,10 +2,10 @@ package com.t4rget.portfolio.controller;
 
 import com.t4rget.portfolio.model.Educacion;
 import com.t4rget.portfolio.service.EducacionService;
+import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,12 +22,12 @@ public class EducacionController {
         this.educacionService = educacionService;
     }
     
-    @GetMapping("id/{id}")
-    public ResponseEntity<Educacion> traerEducacion(@PathVariable("id")Long id) {
+    @GetMapping("/all")
+    public ResponseEntity<List<Educacion>> traerEducaciones() {
         
-        Educacion educacion=educacionService.buscarEducacionPorId(id);
+        List<Educacion> educaciones=educacionService.buscarEducaciones();
         
-        return new ResponseEntity<>(educacion, HttpStatus.OK);
+        return new ResponseEntity<>(educaciones, HttpStatus.OK);
     }
     
     @PutMapping("/update")
