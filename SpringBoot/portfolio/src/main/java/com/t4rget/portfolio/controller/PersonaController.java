@@ -1,4 +1,3 @@
-
 package com.t4rget.portfolio.controller;
 
 import com.t4rget.portfolio.model.Persona;
@@ -24,12 +23,11 @@ public class PersonaController {
     }
     
     @GetMapping("/id/{id}")
-    public ResponseEntity<Persona> obtenerPersona(@PathVariable("id") Long id) {
+    public ResponseEntity<Persona> traerPersona(@PathVariable("id") Long id) {
         
         Persona persona=personaService.buscarPersonaPorId(id);
         
-        return new ResponseEntity<>(persona, HttpStatus.OK);
-        
+        return new ResponseEntity<>(persona, HttpStatus.OK);  
     }
     
     @PutMapping("/update")
