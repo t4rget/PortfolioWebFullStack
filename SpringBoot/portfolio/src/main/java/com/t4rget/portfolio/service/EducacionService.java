@@ -1,5 +1,5 @@
 
-package com.t4rget.portfolio.services;
+package com.t4rget.portfolio.service;
 
 import com.t4rget.portfolio.model.Educacion;
 import com.t4rget.portfolio.repository.EducacionRepo;

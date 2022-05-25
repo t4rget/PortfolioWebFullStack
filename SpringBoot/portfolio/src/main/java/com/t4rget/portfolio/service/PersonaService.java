@@ -1,6 +1,5 @@
-package com.t4rget.portfolio.services;
+package com.t4rget.portfolio.service;
 
-import com.t4rget.portfolio.exception.UserNotFoundException;
 import com.t4rget.portfolio.model.Persona;
 import com.t4rget.portfolio.repository.PersonaRepo;
 import java.util.List;
@@ -37,8 +36,4 @@ public class PersonaService {
          personaRepo.deleteById(id);
      }
     
-     public Persona buscarPersonasPorId(Long id){
-         return personaRepo.findById(id).orElseThrow(() ->new UserNotFoundException("usuario no encontrado"));
-     }
-     
 }
