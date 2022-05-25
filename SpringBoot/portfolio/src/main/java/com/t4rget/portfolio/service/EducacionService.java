@@ -1,6 +1,6 @@
 package com.t4rget.portfolio.service;
 
-import com.t4rget.portfolio.exception.EducationNotFoundException;
+/*import com.t4rget.portfolio.exception.EducationNotFoundException;*/
 import com.t4rget.portfolio.model.Educacion;
 import com.t4rget.portfolio.repository.EducacionRepo;
 import java.util.List;
@@ -32,10 +32,10 @@ public class EducacionService {
          return educacionRepo.save(educacion);
      }
     
-     public Educacion buscarEducacionPorId(Long id){
+     /*public Educacion buscarEducacionPorId(Long id){
          return educacionRepo.findById(id).orElseThrow(() ->new EducationNotFoundException("educacion no encontrada"));
      }
-     
+     */
      public void borrarEducacion(Long id){
          educacionRepo.deleteById(id);
      }

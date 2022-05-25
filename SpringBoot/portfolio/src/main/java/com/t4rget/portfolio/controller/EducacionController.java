@@ -5,7 +5,9 @@ import com.t4rget.portfolio.service.EducacionService;
 import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -43,9 +45,16 @@ public class EducacionController {
         
         Educacion agregarEducacion=educacionService.agregarEducacion(educacion);
         
-        return new ResponseEntity<>(agregarEducacion,HttpStatus.OK);
+        return new ResponseEntity<>(agregarEducacion,HttpStatus.CREATED);
     }  
     
-
+    @DeleteMapping("delete/{id}")
+    public  ResponseEntity<?> borrarEducacion(@PathVariable("id") Long id){
+        
+        educacionService.borrarEducacion(id);
+        
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+    
 }
 

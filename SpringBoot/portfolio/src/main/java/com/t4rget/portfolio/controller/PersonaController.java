@@ -43,7 +43,7 @@ public class PersonaController {
         
         Persona agregarPersona=personaService.agregarPersona(persona);
         
-        return new ResponseEntity<>(agregarPersona,HttpStatus.OK);
+        return new ResponseEntity<>(agregarPersona,HttpStatus.CREATED);
     }
     
     
