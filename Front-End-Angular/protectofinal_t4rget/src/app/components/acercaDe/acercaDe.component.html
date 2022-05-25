@@ -8,11 +8,10 @@
   </div>
   <div id="info-data">
     <div id="info-contact">
-      <h1>Taron Jonathan Alexander</h1>
-      <h3>{{persona.nombrePer}}APIRest</h3>
-      <div id="info-company">tecnico en MDE</div>
+      <h1>{{persona.apellidoPer}} {{persona.nombrePer}}</h1>
+      <div id="info-company">{{persona.tituloPer}}</div>
       <div id="info-contacto">
-        <span>Misiones (Argentina)</span>
+        <span>{{persona.idprovinciaPer}} ({{persona.idpaisPer}})</span>
         <span><a href="#">Informacion de contacto</a></span>
       </div>
       <div id="info-actions">
@@ -36,5 +35,5 @@
 </div>
 <div class="card" id="acercadeid">
   <h1>Acerca de</h1>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero similique, enim saepe sapiente dicta aperiam, labore aspernatur atque repellat corporis nobis pariatur id illum? Dolorum veritatis eos eaque earum nobis?</p>
+    <p>{{persona?.sobreMiPer}} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero similique, enim saepe sapiente dicta aperiam, labore aspernatur atque repellat corporis nobis pariatur id illum? Dolorum veritatis eos eaque earum nobis?</p>
 </div>
