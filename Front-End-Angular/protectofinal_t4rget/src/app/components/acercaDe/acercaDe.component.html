@@ -1,4 +1,4 @@
-<div class="card mat-card" id="info-card">
+<div *ngIf="persona" class="card mat-card" id="info-card">
   <div id="info-pad" style="padding: 16px">
   <div id="info-img">
     <img class="image-profile" src="../../../assets/perfil/avatar.jpg"> <!--imagen de perfil-->
@@ -9,6 +9,7 @@
   <div id="info-data">
     <div id="info-contact">
       <h1>Taron Jonathan Alexander</h1>
+      <h3>{{persona.nombrePer}}APIRest</h3>
       <div id="info-company">tecnico en MDE</div>
       <div id="info-contacto">
         <span>Misiones (Argentina)</span>
