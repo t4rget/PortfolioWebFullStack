@@ -36,4 +36,7 @@ public class PersonaService {
          personaRepo.deleteById(id);
      }
     
+     public Persona buscarPersonaPorId(Long id){
+         return personaRepo.findAllById(id).orElseThrow(() ->new UserNotFoundException("persona no encontrada"));
+     }
 }
