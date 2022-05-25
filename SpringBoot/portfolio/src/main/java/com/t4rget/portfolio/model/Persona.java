@@ -16,7 +16,7 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter
-public class Persona implements  Serializable { //VER PARA QUE SIRVE EL SERIALIZABLE
+public class Persona implements Serializable{ //VER PARA QUE SIRVE EL SERIALIZABLE
     
     // ATRIBUTOS
     
@@ -24,6 +24,7 @@ public class Persona implements  Serializable { //VER PARA QUE SIRVE EL SERIALIZ
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(unique = false, updatable = false)
     private long id;
+    
     private String nombrePer;
     private String apellidoPer;
     private String direccionPer;
@@ -63,7 +64,7 @@ public class Persona implements  Serializable { //VER PARA QUE SIRVE EL SERIALIZ
     }
     
     // MAPEADO PARA LA VINCULACION, VER BIEN PARA QUE SIRVE
-    
+   
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "idEdu")
     private List<Educacion> educacionList;
     
@@ -72,7 +73,7 @@ public class Persona implements  Serializable { //VER PARA QUE SIRVE EL SERIALIZ
     
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "idExp")
     private  List<Experiencia> experienciaList;
-    
+
     
         
 }
