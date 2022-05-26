@@ -1,15 +1,15 @@
 <div class="card" id="educacion-data">
   <div id="data-pack2">
     <h1>Educacion</h1>
-    <ul id="exp-card">
+    <ul *ngFor="let educacion of educacions" id="exp-card">
       <div id="data-exp">
       <a href="#">
         <img class="img-responsive" id="img-exp" src="../../../assets/logos/unam.png"> <!--logo mde-->
       </a>
       <div>
-        <h2>Instituto Nuestra Sra de Lourdes</h2>
-        <p>Economia y Gestion de las Organizaciones</p>
-        <p>2010-1998</p>
+        <h2>{{educacion.idInstitucionEdu}}</h2>
+        <p>{{educacion.tituloEdu}}</p>
+        <p>{{educacion.finEdu}}-{{educacion.iniEdu}}</p>
       </div>
       </div>
     </ul>
