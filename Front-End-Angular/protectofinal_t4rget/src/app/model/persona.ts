@@ -4,16 +4,15 @@ export interface Persona {
   nombrePer : String;
   apellidoPer : String;
   direccionPer: String;
-  idciudadPer : String;
-  idprovinciaPer : String;
-  idpaisPer : String;
+  ciudadPer : String;
+  provinciaPer : String;
+  paisPer : String;
   tituloPer : String;
   fotoPerfilPer : String;
   telefonePer : String;
   emailPer : String;
   sobreMiPer : String;
   fechaNacPer : String;
-  idUsuarioPer : Number;
 
 }
   /*/ VER SI CORRESPONDE O NO EL CONTRUCTOR

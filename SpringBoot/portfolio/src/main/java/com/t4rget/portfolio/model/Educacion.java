@@ -23,8 +23,8 @@ public class Educacion {
     private int iniEdu;
     private int finEdu;
     private String tituloEdu;
-    private int idPersonaEdu;
-    private  int idInstitucionEdu;
+    private String urlInstitucionEdu;
+    private  String institucionEdu;
     
     // CONSTRUCTOR VACIO
 
@@ -33,16 +33,13 @@ public class Educacion {
     
     // CONSTRUCTOR
 
-    public Educacion(Long idEdu, int iniEdu, int finEdu, String tituloEdu, int idPersonaEdu, int idInstitucionEdu) {
+    public Educacion(Long idEdu, int iniEdu, int finEdu, String tituloEdu, String urlInstitucionEdu, String institucionEdu) {
         this.idEdu = idEdu;
         this.iniEdu = iniEdu;
         this.finEdu = finEdu;
         this.tituloEdu = tituloEdu;
-        this.idPersonaEdu = idPersonaEdu;
-        this.idInstitucionEdu = idInstitucionEdu;
-    }
-
-    
-    
+        this.urlInstitucionEdu = urlInstitucionEdu;
+        this.institucionEdu = institucionEdu;
+    }    
         
 }

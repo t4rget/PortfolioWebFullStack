@@ -28,16 +28,15 @@ public class Persona implements Serializable{ //VER PARA QUE SIRVE EL SERIALIZAB
     private String nombrePer;
     private String apellidoPer;
     private String direccionPer;
-    private String idciudadPer;
-    private String idprovinciaPer;
-    private String idpaisPer;
+    private String ciudadPer;
+    private String provinciaPer;
+    private String paisPer;
     private String tituloPer;
     private String fotoPerfilPer;
     private String telefonoPer;
     private String emailPer;
     private String sobreMiPer;
     private String fechaNacPer;
-    private int idUsuarioPer;
     
     //CONSTRUCTOR VACIO
 
@@ -46,21 +45,21 @@ public class Persona implements Serializable{ //VER PARA QUE SIRVE EL SERIALIZAB
 
     //CONTRUCTOR
 
-    public Persona(long id, String nombrePer, String apellidoPer, String direccionPer, String idciudadPer, String idprovinciaPer, String idpaisPer, String tituloPer, String fotoPerfilPer, String telefonoPer, String emailPer, String sobreMiPer, String fechaNacPer, int idUsuarioPer) {
+    public Persona(long id, String nombrePer, String apellidoPer, String direccionPer, String ciudadPer, String provinciaPer, String paisPer, String tituloPer, String fotoPerfilPer, String telefonoPer, String emailPer, String sobreMiPer, String fechaNacPer) {
         this.id = id;
         this.nombrePer = nombrePer;
         this.apellidoPer = apellidoPer;
         this.direccionPer = direccionPer;
-        this.idciudadPer = idciudadPer;
-        this.idprovinciaPer = idprovinciaPer;
-        this.idpaisPer = idpaisPer;
+        this.ciudadPer = ciudadPer;
+        this.provinciaPer = provinciaPer;
+        this.paisPer = paisPer;
         this.tituloPer = tituloPer;
         this.fotoPerfilPer = fotoPerfilPer;
         this.telefonoPer = telefonoPer;
         this.emailPer = emailPer;
         this.sobreMiPer = sobreMiPer;
         this.fechaNacPer = fechaNacPer;
-        this.idUsuarioPer = idUsuarioPer;
+
     }
     
     // MAPEADO PARA LA VINCULACION, VER BIEN PARA QUE SIRVE
