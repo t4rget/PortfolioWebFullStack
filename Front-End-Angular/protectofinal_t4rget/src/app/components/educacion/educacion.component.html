@@ -38,6 +38,15 @@
           id="btn-edit">
         <i class="bi bi-pencil-square"></i>
         </a>
+        <a
+          type="button"
+          (click)="onOpenModal('delete',educacion)"
+          class="btn btn-secondary tooltips"
+          data-bs-toggle="modal"
+          data-bs-target="#deleteEducacionModal"
+          id="btn-delete"
+        ><i class="bi bi-x-square"></i>
+        </a>
         <!-- ESTO SE ESTA DESAROLLANDO
         <a
           (click)="onOpenModal('edit',educacion)"
