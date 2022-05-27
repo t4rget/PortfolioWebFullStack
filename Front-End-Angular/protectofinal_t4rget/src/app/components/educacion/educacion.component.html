@@ -1,16 +1,36 @@
 <div class="card" id="educacion-data">
   <div id="data-pack2">
-    <h1>Educacion</h1>
-    <ul *ngFor="let educacion of educacions" id="exp-card">
-      <div id="data-exp">
+    <h1 class="mt-3">Educacion</h1>
+    <ul *ngFor="let educacion of educacions" id="exp-card" class="mt-4">
+      <div id="data-exp" class="btn-edit">
       <a href="#">
         <img class="img-responsive" id="img-exp" src="../../../assets/logos/unam.png"> <!--logo mde-->
       </a>
       <div>
-        <h2>{{educacion.idInstitucionEdu}}</h2>
+        <h2>{{educacion.institucionEdu}}</h2>
         <p>{{educacion.tituloEdu}}</p>
         <p>{{educacion.finEdu}}-{{educacion.iniEdu}}</p>
       </div>
+      <div class="row">
+        <a
+          class="btn btn-primary tooltips"
+          data-placement="top"
+          data-toggle="tooltip"
+          data-original-title="Edit"
+        ><i class="bi bi-pencil-square"></i>
+        </a>
+        <a
+          class="btn btn-secondary tooltips"
+          data-placement="top"
+          data-toggle="tooltip"
+          data-original-title="Delete"
+        ><i class="bi bi-x-square"></i>
+        </a>
+      </div>
+      <!-- <a class="btn-right"
+        ><i class="fa fa-edit"></i>
+      </a>
+      -->
       </div>
     </ul>
   </div>

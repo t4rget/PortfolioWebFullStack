@@ -71,18 +71,18 @@ button {
 #info-card {
   margin-left: 15px;
   margin-right: 15px;
-  border-bottom-left-radius: 3%;
-  border-bottom-right-radius: 3%;
+  /*border-bottom-left-radius: 3%;
+  border-bottom-right-radius: 3%;*/
 }
 
 #acercadeid {
   margin-left: 15px;
   margin-right: 15px;
   padding-left: 15px;
-  border-bottom-left-radius: 3%;
+  /*border-bottom-left-radius: 3%;
   border-bottom-right-radius: 3%;
   border-top-left-radius: 3%;
-  border-top-right-radius: 3%;
+  border-top-right-radius: 3%;*/
   margin-top: 20px;
 }
 
@@ -96,4 +96,8 @@ button {
 
 #info-pad {
   margin-top: 50px;
+}
+
+.mt-4 {
+  margin-left: 50px;
 }

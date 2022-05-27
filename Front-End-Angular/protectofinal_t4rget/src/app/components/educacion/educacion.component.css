@@ -1,6 +1,6 @@
 #educacion-data {
   margin-left: 15px;
-  margin-top: 0px;
+  margin-top: 20px;
   margin-right: 15px;
   margin-top-color: #
 }
@@ -20,4 +20,50 @@ p {
 #img-exp {
   width: 60px;
   height: 60px;
+}
+
+/*.btn-edit {
+  align-self: flex-end;
+}*/
+.btn-right {
+  /*display: flex;
+  align-self: flex-end;*/
+  margin-left: 10%;
+}
+
+/*.bi-x-square {
+  color: black;
+  display: block;
+  height: 2.4rem;
+  width: 2.4rem;
+  line-height: 2.4rem;
+  text-align: center;
+  border-radius: 50%;
+  background-color: white;
+}*/
+
+/*.fa-button:hover,.fa:hover {
+  background-color: gray;
+}
+*/
+
+.btn-secondary {
+  background-color: red;
+  height: 40px;
+  width: 46px;
+  border-color: transparent;
+  margin-left: 10px;
+}
+
+.btn-primary {
+  height: 40px;
+  width: 46px;
+  border-color: transparent;
+}
+
+
+.row {
+  margin-left: auto;
+  margin-right: 5%;
+  align-items: center;
 }
