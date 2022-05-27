@@ -5,4 +5,5 @@ export interface Educacion{
   tituloEdu:string;
   idPersonaEdu:number;
   institucionEdu:number;
+  urlInstitucionEdu:string;
 }

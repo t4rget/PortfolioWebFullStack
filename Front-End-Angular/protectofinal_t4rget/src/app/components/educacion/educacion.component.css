@@ -47,7 +47,7 @@ p {
 }
 */
 
-.btn-secondary {
+#btn-delete {
   background-color: red;
   height: 40px;
   width: 46px;
@@ -55,12 +55,20 @@ p {
   margin-left: 10px;
 }
 
-.btn-primary {
+#btn-edit {
   height: 40px;
   width: 46px;
   border-color: transparent;
 }
 
+#btn-add {
+  margin-left: 3%;
+  margin-top: 20px;
+}
+
+#edu-head {
+  display: flex;
+}
 
 .row {
   margin-left: auto;

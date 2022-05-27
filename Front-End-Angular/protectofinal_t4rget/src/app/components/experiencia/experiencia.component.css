@@ -20,3 +20,24 @@ p {
   width: 60px;
   height: 60px;
 }
+
+.btn-secondary {
+  background-color: red;
+  height: 40px;
+  width: 46px;
+  border-color: transparent;
+  margin-left: 10px;
+}
+
+.btn-outline-dark {
+  height: 40px;
+  width: 46px;
+  /*border-color: transparent;*/
+}
+
+
+.row {
+  margin-left: auto;
+  margin-right: 5%;
+  align-items: center;
+}
