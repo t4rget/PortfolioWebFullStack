@@ -24,22 +24,24 @@ public class Experiencia {
     private int finExp;
     private String descripcionExp;
     private int trabajoActExp;
-    private  String idEmpresaExp;
-    private String idCargoExp;
-    private String idTipoEmpleoExp;
+    private  String empresaExp;
+    private String cargoExp;
+    private String tipoEmpleoExp;
     
     // CONTRUCTOR
 
-    public Experiencia(Long idExp, int iniExp, int finExp, String descripcionExp, int trabajoActExp, String idEmpresaExp, String idCargoExp, String idTipoEmpleoExp) {
+    public Experiencia(Long idExp, int iniExp, int finExp, String descripcionExp, int trabajoActExp, String empresaExp, String cargoExp, String tipoEmpleoExp) {
         this.idExp = idExp;
         this.iniExp = iniExp;
         this.finExp = finExp;
         this.descripcionExp = descripcionExp;
         this.trabajoActExp = trabajoActExp;
-        this.idEmpresaExp = idEmpresaExp;
-        this.idCargoExp = idCargoExp;
-        this.idTipoEmpleoExp = idTipoEmpleoExp;
+        this.empresaExp = empresaExp;
+        this.cargoExp = cargoExp;
+        this.tipoEmpleoExp = tipoEmpleoExp;
     }
+
+
 
  
     
