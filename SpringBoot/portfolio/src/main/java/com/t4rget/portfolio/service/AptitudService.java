@@ -35,7 +35,7 @@ public class AptitudService {
          return educacionRepo.findById(id).orElseThrow(() ->new EducationNotFoundException("educacion no encontrada"));
      }
      */
-     public void borrarEducacion(Long id){
+     public void borrarAptitud(Long id){
          aptitudRepo.deleteById(id);
      }
     
