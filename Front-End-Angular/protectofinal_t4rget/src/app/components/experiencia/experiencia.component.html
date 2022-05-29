@@ -6,14 +6,14 @@
     <ul *ngFor="let experiencia of experiencias" id="exp-card" class="mt-4">
       <div id="data-exp" class="btn-edit">
       <a href="#">
-        <img class="img-responsive" id="img-exp" src="../../../assets/logos/unam.png"> <!--logo mde-->
+        <img class="img-responsive" id="img-exp" src="../../../assets/logos/mde.jpeg"> <!--logo mde-->
       </a>
       <div id="data-edd">
         <h3>{{experiencia.cargoExp}}</h3>
         <p>{{experiencia.empresaExp}} - {{experiencia.tipoEmpleoExp}}</p>
-        <p>{{experiencia.finExp}}-{{experiencia.iniExp}}</p>
-        <p>{{experiencia.direccionExp}}-{{experiencia.ciudadExp}}</p>
-        <p>{{experiencia.provinciaExp}}-{{experiencia.paisExp}}</p>
+        <p>{{experiencia.finExp}} - {{experiencia.iniExp}}</p>
+        <p>{{experiencia.direccionExp}} ({{experiencia.ciudadExp}})</p>
+        <p>{{experiencia.provinciaExp}} ({{experiencia.paisExp}})</p>
       </div>
       <div class="row">
         <a
@@ -72,9 +72,9 @@
               <label for="cargoExp">Puesto</label>
               <input type="text"
                 ngModel
-                name="cargoEdu"
+                name="cargoExp"
                 class="form-control"
-                id="cargoEdu"
+                id="cargoExp"
                 placeholder="ej: Administrativo"
                 required />
             </div>
@@ -219,9 +219,9 @@
               <input
                 type="text"
                 ngModel="{{editExperiencia?.cargoExp}}"
-                name="cargoEdu"
+                name="cargoExp"
                 class="form-control"
-                id="cargoEdu"
+                id="cargoExp"
                 aria-describedby="emailHelp"
                 placeholder="Puesto"
               />
@@ -264,7 +264,7 @@
                 class="form-control"
                 id="trabajoActExp"
                 placeholder="ej: si"
-                required />
+              />
             </div>
             <div class="form-group">
               <label for="tipoEmpleoExp">Jornada</label>

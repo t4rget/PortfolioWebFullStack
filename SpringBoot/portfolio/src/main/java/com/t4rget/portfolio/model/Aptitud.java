@@ -17,6 +17,7 @@ public class Aptitud {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idApt;
+    
     private  int nivelApt;
     private int nombreHabilidadApt;
     private  int urlHabilidadApt;

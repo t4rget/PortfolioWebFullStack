@@ -20,6 +20,7 @@ public class Experiencia {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idExp;
+    
     private int iniExp;
     private int finExp;
     private int trabajoActExp;
