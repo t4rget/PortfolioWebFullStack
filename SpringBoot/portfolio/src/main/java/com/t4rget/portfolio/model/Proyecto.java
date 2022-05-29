@@ -18,7 +18,8 @@ public class Proyecto {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long idPro;
     
-    private String nombrePro;
+    private String tituloPro;
+    private String fechaPro;
     private String sobrePro;
     private String urlPro;
     private String urlImagenPro;
@@ -30,9 +31,10 @@ public class Proyecto {
 
     // CONTRUCTOR
 
-    public Proyecto(long idPro, String nombrePro, String sobrePro, String urlPro, String urlImagenPro) {
+    public Proyecto(long idPro, String tituloPro, String fechaPro, String sobrePro, String urlPro, String urlImagenPro) {
         this.idPro = idPro;
-        this.nombrePro = nombrePro;
+        this.tituloPro = tituloPro;
+        this.fechaPro = fechaPro;
         this.sobrePro = sobrePro;
         this.urlPro = urlPro;
         this.urlImagenPro = urlImagenPro;

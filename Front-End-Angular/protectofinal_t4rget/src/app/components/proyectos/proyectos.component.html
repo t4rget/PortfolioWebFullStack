@@ -1,9 +1,323 @@
-<div class="card">
-  <div class="row">
-    <h1>Proyectos Realizados</h1>
-    <div class="col">
-      <h2>Portfolio Web</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente reprehenderit voluptate possimus totam illum hic itaque eos velit eius, omnis illo. Atque qui quibusdam id dolores libero. Aperiam, voluptatem modi!</p>
+<div class="card" id="proyecto-data">
+  <div id="data-pack2">
+    <div id="pro-head">
+      <h1 class="mt-3">Proyectos</h1>
+    </div>
+    <ul *ngFor="let proyecto of proyectos" id="exp-card" class="mt-4">
+      <div id="data-exp" class="btn-edit">
+      <a href="#">
+        <img class="img-responsive" id="img-exp" src="../../../assets/logos/unam.png"> <!--logo proyecto-->
+      </a>
+      <div id="data-edd">
+        <h3>{{proyecto.tituloPro}}</h3>
+        <p>{{proyecto.fechaPro}} - {{proyecto.sobrePro}}</p>
+      </div>
+      <div class="row">
+        <a
+          type="button"
+          (click)="onOpenModal('edit',proyecto)"
+          class="btn btn-outline-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#editProyectoModal"
+          id="btn-edit">
+        <i class="bi bi-pencil-square"></i>
+        </a>
+        <a
+          type="button"
+          (click)="onOpenModal('delete',proyecto)"
+          class="btn btn-outline-danger"
+          data-bs-toggle="modal"
+          data-bs-target="#deleteProyectoModal"
+          id="btn-delete"
+        ><i class="bi bi-x-square"></i>
+        </a>
+      </div>
+    </div>
+    </ul>
+    <div id="div-add" class="text-center">
+      <!-- Button trigger modal -->
+      <button id="btn-add" type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addProyectoModal">
+        <a>
+          <i class="bi bi-plus-square"></i>
+        <span class="sr-only">(current)</span>
+        </a>
+      </button>
     </div>
   </div>
+
+
+  <!-- Modal añadir proyecto -->
+
+  <div class="modal fade" id="addProyectoModal"
+      tabindex="-1" aria-labelledby="addProyectoModalLabel"
+      aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addProyectoModalLabel">Añadir Proyecto</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #addForm="ngForm" (ngSubmit)="onAddProyecto(addForm)">
+            <div class="form-group">
+              <label for="tituloPro">Titulo</label>
+              <input type="text"
+                ngModel
+                name="tituloPro"
+                class="form-control"
+                id="tituloPro"
+                placeholder="Portfolio Web"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="fechaPro">Fecha</label>
+              <input type="text"
+                ngModel
+                name="fechaPro"
+                class="form-control"
+                id="fechaPro"
+                placeholder="2001"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="sobrePro">Sobre Proyecto</label>
+              <textarea
+                class="form-control"
+                id="sobrePro" type="text"
+                ngModel
+                name="sobrePro"
+                placeholder="Reseña del proyecto"
+                required
+                rows="3">
+              </textarea>
+              <!-- <input type="text"
+                ngModel
+                name="sobrePro"
+                class="form-control"
+                id="sobrePro"
+                placeholder="Reseña del proyecto"
+                required /> -->
+            </div>
+            <div class="form-group">
+              <label for="urlPro">URL Proyecto</label>
+              <input type="text"
+                ngModel
+                name="urlPro"
+                class="form-control"
+                id="urlPro"
+                placeholder="htpp://proyecto.com"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="urlImagenPro">URL Imagen Proyecto</label>
+              <input type="text"
+                ngModel
+                name="urlImagenPro"
+                class="form-control"
+                id="urlImagenPro"
+                placeholder="proyecto.png"
+                required />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            id="add-proyecto-form"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+           >
+            Cerrar
+          </button>
+          <button
+            (click)="onAddProyecto(addForm)"
+            class="btn btn-primary">
+            Guardar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal editar  proyecto -->
+
+  <div
+      class="modal fade"
+      id="editProyectoModal"
+      tabindex="-1"
+      aria-labelledby="proyectoEditModalLabel"
+      aria-hidden="true"
+    >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateProyectoModalLabel">
+            Editar {{editProyecto?.tituloPro}}
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #editForm="ngForm">
+            <div class="form-group">
+              <label for="name">Titulo</label>
+              <input
+                type="text"
+                ngModel="{{editProyecto?.tituloPro}}"
+                name="tituloPro"
+                class="form-control"
+                id="tituloPro"
+                aria-describedby="emailHelp"
+                placeholder="Titulo"
+              />
+            </div>
+            <input
+              type="hidden"
+              ngModel="{{editProyecto?.idPro}}"
+              name="idPro"
+              class="form-control"
+              id="idPro"
+              placeholder=""
+            />
+            <div class="form-group">
+              <label for="fechaPro">Fecha</label>
+              <input type="text"
+                ngModel="{{editProyecto?.fechaPro}}"
+                name="fechaPro"
+                class="form-control"
+                id="fechaPro"
+                placeholder="2001"
+              />
+            </div>
+            <div class="form-group">
+              <label for="sobrePro">Sobre Proyecto</label>
+              <textarea
+                class="form-control"
+                id="sobrePro" type="text"
+                ngModel="{{editProyecto?.sobrePro}}"
+                name="sobrePro"
+                placeholder="Reseña del proyecto"
+                required
+                rows="3">
+              </textarea>
+              <!-- <input type="text"
+                ngModel="{{editProyecto?.sobrePro}}"
+                name="sobrePro"
+                class="form-control"
+                id="sobrePro"
+                placeholder="Reseña del proyecto"
+              /> -->
+            </div>
+            <div class="form-group">
+              <label for="urlPro">URL Proyecto</label>
+              <input type="text"
+                ngModel="{{editProyecto?.urlPro}}"
+                name="urlPro"
+                class="form-control"
+                id="urlPro"
+                placeholder="http://proyecto.com"
+              />
+            </div>
+            <div class="form-group">
+              <label for="urlImagenPro">URL Imagen del Proyecto</label>
+              <input type="text"
+                ngModel="{{editProyecto?.urlImagenPro}}"
+                name="urlImagenPro"
+                class="form-control"
+                id="urlImagenPro"
+                placeholder="proyecto.png"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            id=""
+            data-bs-dismiss="modal"
+            class="btn btn-secondary"
+          >
+          Salir
+          </button>
+          <button
+            (click)="onUpdateProyecto(editForm.value)"
+            data-bs-dismiss="modal"
+            class="btn btn-primary"
+          >
+          Confirmar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal borrar proyecto -->
+
+  <div
+
+    class="modal fade"
+    id="deleteProyectoModal"
+    tabindex="-1"
+    aria-labelledby="deleteModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Borrar Proyecto</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            ¿ Estas seguro que quieres borrar
+            <b>{{deleteProyecto?.tituloPro}}</b> ?
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+            id=""
+          >
+            Salir
+          </button>
+          <button
+            (click)="onDeleteProyecto(deleteProyecto!.idPro)"
+            class="button btn btn-danger"
+            data-bs-dismiss="modal"
+          >
+            Confirmar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notificacions Sin Proyecto -->
+
+  <div *ngIf="proyectos?.length == 0" class="col-auto">
+    <div class="alert alert-info" role="alert">
+      <h4 class="alert-heading">SIN PROYECTOS!</h4>
+      <p>No se encontro ninguna proyecto.</p>
+    </div>
+  </div>
+
 </div>
