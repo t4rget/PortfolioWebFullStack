@@ -8,26 +8,38 @@ import lombok.Getter;
 import lombok.Setter;
 
 
-
-@Getter @Setter
 @Entity
+@Getter @Setter
 public class Proyecto {
+    
+    //ATRIBUTOS
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private long idPro;
     
-    public String name;
-    public int id;
+    private String nombrePro;
+    private String sobrePro;
+    private String urlPro;
+    private String urlImagenPro;
 
+    // CONSTRUCTOR VACIO
+    
     public Proyecto() {
     }
 
-    public Proyecto(String name, int id) {
-        this.name = name;
-        this.id = id;
+    // CONTRUCTOR
+
+    public Proyecto(long idPro, String nombrePro, String sobrePro, String urlPro, String urlImagenPro) {
+        this.idPro = idPro;
+        this.nombrePro = nombrePro;
+        this.sobrePro = sobrePro;
+        this.urlPro = urlPro;
+        this.urlImagenPro = urlImagenPro;
     }
     
-    
+
+
     
     
 }

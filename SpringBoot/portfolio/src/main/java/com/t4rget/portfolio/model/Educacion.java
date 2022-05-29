@@ -20,6 +20,7 @@ public class Educacion {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idEdu;
+    
     private int iniEdu;
     private int finEdu;
     private String tituloEdu;

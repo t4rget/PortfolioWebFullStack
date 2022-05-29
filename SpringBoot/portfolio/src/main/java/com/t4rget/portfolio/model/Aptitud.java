@@ -18,8 +18,8 @@ public class Aptitud {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idApt;
     private  int nivelApt;
-    private int idHabilidadApt;
-    private  int idPersonaApt;
+    private int nombreHabilidadApt;
+    private  int urlHabilidadApt;
     
     // CONTRUCTOR VACIO
 
@@ -28,12 +28,14 @@ public class Aptitud {
     
     // CONTRUCTOR
 
-    public Aptitud(Long idApt, int nivelApt, int idHabilidadApt, int idPersonaApt) {
+    public Aptitud(Long idApt, int nivelApt, int nombreHabilidadApt, int urlHabilidadApt) {
         this.idApt = idApt;
         this.nivelApt = nivelApt;
-        this.idHabilidadApt = idHabilidadApt;
-        this.idPersonaApt = idPersonaApt;
+        this.nombreHabilidadApt = nombreHabilidadApt;
+        this.urlHabilidadApt = urlHabilidadApt;
     }
+
+    
     
     
     
