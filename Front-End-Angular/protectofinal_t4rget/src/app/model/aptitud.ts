@@ -1,4 +1,4 @@
-export interface Aptitude {
+export interface Aptitud {
   idApt: number;
   nivelApt: number;
   nombreHabilidadApt: string;
