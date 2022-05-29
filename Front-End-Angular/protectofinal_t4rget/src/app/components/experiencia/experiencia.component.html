@@ -1,34 +1,410 @@
-<div class="card" id="experiencia-gral">
-  <div id="data-pack1">
-    <h1 class="mt-3">Experiencia</h1>
-    <ul id="exp-card" class="mt-4">
-      <div id="data-exp">
+<div class="card" id="experiencia-data">
+  <div id="data-pack2">
+    <div id="exp-head">
+      <h1 class="mt-3">Experiencia</h1>
+    </div>
+    <ul *ngFor="let experiencia of experiencias" id="exp-card" class="mt-4">
+      <div id="data-exp" class="btn-edit">
       <a href="#">
-        <img class="img-responsive" id="img-exp" src="../../../assets/logos/mde.jpeg"> <!--logo mde-->
+        <img class="img-responsive" id="img-exp" src="../../../assets/logos/unam.png"> <!--logo mde-->
       </a>
-      <div>
-        <h2>Administrativo</h2>
-        <p>Muebles Don Eduardo - Jornada Completa</p>
-        <p>2022-2016</p>
-        <p>Avenida Beltrame, Obera, Misiones</p>
+      <div id="data-edd">
+        <h3>{{experiencia.cargoExp}}</h3>
+        <p>{{experiencia.empresaExp}} - {{experiencia.tipoEmpleoExp}}</p>
+        <p>{{experiencia.finExp}}-{{experiencia.iniExp}}</p>
+        <p>{{experiencia.direccionExp}}-{{experiencia.ciudadExp}}</p>
+        <p>{{experiencia.provinciaExp}}-{{experiencia.paisExp}}</p>
       </div>
       <div class="row">
         <a
-          class="btn btn-outline-dark"
-          data-placement="top"
-          data-toggle="tooltip"
-          data-original-title="Edit"
-        ><i class="bi bi-pencil-square"></i>
+          type="button"
+          (click)="onOpenModal('edit',experiencia)"
+          class="btn btn-outline-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#editExperienciaModal"
+          id="btn-edit">
+        <i class="bi bi-pencil-square"></i>
         </a>
         <a
-          class="btn btn-secondary tooltips"
-          data-placement="top"
-          data-toggle="tooltip"
-          data-original-title="Delete"
+          type="button"
+          (click)="onOpenModal('delete',experiencia)"
+          class="btn btn-outline-danger"
+          data-bs-toggle="modal"
+          data-bs-target="#deleteExperienciaModal"
+          id="btn-delete"
         ><i class="bi bi-x-square"></i>
         </a>
       </div>
-      </div>
+    </div>
     </ul>
+    <div id="div-add" class="text-center">
+      <!-- Button trigger modal -->
+      <button id="btn-add" type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addExperienciaModal">
+        <a>
+          <i class="bi bi-plus-square"></i>
+        <span class="sr-only">(current)</span>
+        </a>
+      </button>
+    </div>
   </div>
+
+
+  <!-- Modal añadir experiencia -->
+
+  <div class="modal fade" id="addExperienciaModal"
+      tabindex="-1" aria-labelledby="addExperienciaModalLabel"
+      aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addExperienciaModalLabel">Añadir Experiencia</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #addForm="ngForm" (ngSubmit)="onAddExperiencia(addForm)">
+            <div class="form-group">
+              <label for="cargoExp">Puesto</label>
+              <input type="text"
+                ngModel
+                name="cargoEdu"
+                class="form-control"
+                id="cargoEdu"
+                placeholder="ej: Administrativo"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="iniExp">Fecha Inicio</label>
+              <input type="text"
+                ngModel
+                name="iniExp"
+                class="form-control"
+                id="iniExp"
+                placeholder="IniExp"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="finExp">Fecha Fin</label>
+              <input type="text"
+                ngModel
+                name="finExp"
+                class="form-control"
+                id="finExp"
+                placeholder="FinExp"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="trabajoActExp">Actual</label>
+              <input type="text"
+                ngModel
+                name="trabajoActExp"
+                class="form-control"
+                id="trabajoActExp"
+                placeholder="ej: si"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="tipoEmpleoExp">Jornada</label>
+              <input type="text"
+                ngModel
+                name="tipoEmpleoExp"
+                class="form-control"
+                id="tipoEmpleoExp"
+                placeholder="ej: Jornada Completa"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="empresaExp">Empresa</label>
+              <input type="text"
+                ngModel
+                name="empresaExp"
+                class="form-control"
+                id="empresaExp"
+                placeholder="ej: Amazon"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="direccionExp">Direccion</label>
+              <input type="text"
+                ngModel
+                name="direccionExp"
+                class="form-control"
+                id="direccionExp"
+                placeholder="ej: Avenida sinNombre 123"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="ciudadExp">Ciudad</label>
+              <input type="text"
+                ngModel
+                name="ciudadExp"
+                class="form-control"
+                id="ciudadExp"
+                placeholder="ej: Obera"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="provinciaExp">Provincia</label>
+              <input type="text"
+                ngModel
+                name="provinciaExp"
+                class="form-control"
+                id="provinciaExp"
+                placeholder="ej: Misiones"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="paisExp">Pais</label>
+              <input type="text"
+                ngModel
+                name="paisExp"
+                class="form-control"
+                id="paisExp"
+                placeholder="ej: Argentina"
+                required />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            id="add-experiencia-form"
+            class="btn btn-secondary cl-auto"
+            data-bs-dismiss="modal"
+           >
+            Cerrar
+          </button>
+          <button
+            (click)="onAddExperiencia(addForm)"
+            class="btn btn-primary cl-auto">
+            Guardar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal editar  experiencia -->
+
+  <div
+      class="modal fade"
+      id="editExperienciaModal"
+      tabindex="-1"
+      aria-labelledby="experienciaEditModalLabel"
+      aria-hidden="true"
+    >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateExperienciaModalLabel">
+            Editar {{editExperiencia?.cargoExp}}
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #editForm="ngForm">
+            <div class="form-group">
+              <label for="cargoExp">Puesto</label>
+              <input
+                type="text"
+                ngModel="{{editExperiencia?.cargoExp}}"
+                name="cargoEdu"
+                class="form-control"
+                id="cargoEdu"
+                aria-describedby="emailHelp"
+                placeholder="Puesto"
+              />
+            </div>
+            <div>
+              <input
+                type="hidden"
+                ngModel="{{editExperiencia?.idExp}}"
+                name="idExp"
+                class="form-control"
+                id="idExp"
+                placeholder=""
+              />
+            </div>
+            <div class="form-group">
+              <label for="iniExp">Fecha Ini</label>
+              <input type="text"
+                ngModel="{{editExperiencia?.iniExp}}"
+                name="iniExp"
+                class="form-control"
+                id="iniExp"
+                placeholder="IniExp"
+              />
+            </div>
+            <div class="form-group">
+              <label for="finExp">Fecha Fin</label>
+              <input type="text"
+                ngModel="{{editExperiencia?.finExp}}"
+                name="finExp"
+                class="form-control"
+                id="finExp"
+                placeholder="FinExp"
+              />
+            </div>
+            <div class="form-group">
+              <label for="trabajoActExp">Actual</label>
+              <input type="text"
+                ngModel="{{editExperiencia?.trabajoActExp}}"
+                name="trabajoActExp"
+                class="form-control"
+                id="trabajoActExp"
+                placeholder="ej: si"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="tipoEmpleoExp">Jornada</label>
+              <input type="text"
+                ngModel="{{editExperiencia?.tipoEmpleoExp}}"
+                name="tipoEmpleoExp"
+                class="form-control"
+                id="tipoEmpleoExp"
+                placeholder="ej: Jornada Completa"
+              />
+            </div>
+            <div class="form-group">
+              <label for="empresaExp">Empresa</label>
+              <input type="text"
+                ngModel="{{editExperiencia?.empresaExp}}"
+                name="empresaExp"
+                class="form-control"
+                id="empresaExp"
+                placeholder="ej: Amazon"
+              />
+            </div>
+            <div class="form-group">
+              <label for="direccionExp">Direccion</label>
+              <input type="text"
+                ngModel="{{editExperiencia?.direccionExp}}"
+                name="direccionExp"
+                class="form-control"
+                id="direccionExp"
+                placeholder="ej: Avenida sinNombre 123"
+              />
+            </div>
+            <div class="form-group">
+              <label for="ciudadExp">Ciudad</label>
+              <input type="text"
+                ngModel="{{editExperiencia?.ciudadExp}}"
+                name="ciudadExp"
+                class="form-control"
+                id="ciudadExp"
+                placeholder="ej: Obera"
+              />
+            </div>
+            <div class="form-group">
+              <label for="provinciaExp">Provincia</label>
+              <input type="text"
+                ngModel="{{editExperiencia?.provinciaExp}}"
+                name="provinciaExp"
+                class="form-control"
+                id="provinciaExp"
+                placeholder="ej: Misiones"
+              />
+            </div>
+            <div class="form-group">
+              <label for="paisExp">Pais</label>
+              <input type="text"
+                ngModel="{{editExperiencia?.paisExp}}"
+                name="paisExp"
+                class="form-control"
+                id="paisExp"
+                placeholder="ej: Argentina"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            id=""
+            data-bs-dismiss="modal"
+            class="btn btn-secondary"
+          >
+          Salir
+          </button>
+          <button
+            (click)="onUpdateExperiencia(editForm.value)"
+            data-bs-dismiss="modal"
+            class="btn btn-primary"
+          >
+          Confirmar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal borrar experiencia -->
+
+  <div
+
+    class="modal fade"
+    id="deleteExperienciaModal"
+    tabindex="-1"
+    aria-labelledby="deleteModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Borrar Experiencia</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            ¿ Estas seguro que quieres borrar
+            <b>{{deleteExperiencia?.cargoExp}}</b> ?
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+            id=""
+          >
+            Salir
+          </button>
+          <button
+            (click)="onDeleteExperiencia(deleteExperiencia!.idExp)"
+            class="button btn btn-danger"
+            data-bs-dismiss="modal"
+          >
+            Confirmar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notificacions Sin Experiencia -->
+
+  <div *ngIf="experiencias?.length == 0" class="col-auto">
+    <div class="alert alert-info" role="alert">
+      <h4 class="alert-heading">SIN EXPERIENCIA!</h4>
+      <p>No se encontro ninguna experiencia.</p>
+    </div>
+  </div>
+
 </div>

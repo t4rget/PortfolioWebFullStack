@@ -1,14 +1,15 @@
-#experiencia-gral {
+#experiencia-data {
   margin-left: 15px;
   margin-top: 20px;
   margin-right: 15px;
+  margin-top-color: #
 }
 
 p {
   margin-bottom: 0px;
 }
 
-#data-pack1,#data-pack2 {
+#data-pack2 {
   margin-left: 15px;
 }
 
@@ -21,23 +22,68 @@ p {
   height: 60px;
 }
 
-.btn-secondary {
-  background-color: red;
+/*.btn-edit {
+  align-self: flex-end;
+}*/
+.btn-right {
+  /*display: flex;
+  align-self: flex-end;*/
+  margin-left: 10%;
+}
+
+/*.bi-x-square {
+  color: black;
+  display: block;
+  height: 2.4rem;
+  width: 2.4rem;
+  line-height: 2.4rem;
+  text-align: center;
+  border-radius: 50%;
+  background-color: white;
+}*/
+
+/*.fa-button:hover,.fa:hover {
+  background-color: gray;
+}
+*/
+
+#btn-delete {
+  /*background-color: red;*/
   height: 40px;
   width: 46px;
   border-color: transparent;
   margin-left: 10px;
 }
 
-.btn-outline-dark {
+#btn-edit {
   height: 40px;
   width: 46px;
-  /*border-color: transparent;*/
+  border-color: transparent;
 }
 
+#div-add {
+  margin-bottom: 10px;
+}
+
+/*.btn-outline-success {
+  border-color: transparent;
+}*/
+
+#exp-head {
+  display: flex;
+}
+
+#data-edd {
+  width: 70%;
+}
 
 .row {
   margin-left: auto;
   margin-right: 5%;
   align-items: center;
+}
+
+i {
+  width: 40px;
+  height: 40px;
 }
