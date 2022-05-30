@@ -19,8 +19,9 @@ public class Aptitud {
     private Long idApt;
     
     private  int nivelApt;
-    private int nombreHabilidadApt;
-    private  int urlHabilidadApt;
+    private String nombreHabilidadApt;
+    private  String urlHabilidadApt;
+    private String colorbarApt;
     
     // CONTRUCTOR VACIO
 
@@ -29,12 +30,17 @@ public class Aptitud {
     
     // CONTRUCTOR
 
-    public Aptitud(Long idApt, int nivelApt, int nombreHabilidadApt, int urlHabilidadApt) {
+    public Aptitud(Long idApt, int nivelApt, String nombreHabilidadApt, String urlHabilidadApt, String colorbarApt) {
         this.idApt = idApt;
         this.nivelApt = nivelApt;
         this.nombreHabilidadApt = nombreHabilidadApt;
         this.urlHabilidadApt = urlHabilidadApt;
+        this.colorbarApt = colorbarApt;
     }
+
+
+
+
 
     
     

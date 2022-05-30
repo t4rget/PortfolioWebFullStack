@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { Aptitud } from 'src/app/model/aptitud';
 import { AptitudService } from 'src/app/service/aptitud.service';
 
+
 @Component({
   selector: 'app-hyss',
   templateUrl: './hyss.component.html',

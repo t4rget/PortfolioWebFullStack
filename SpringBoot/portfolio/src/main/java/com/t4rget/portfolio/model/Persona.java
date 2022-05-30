@@ -62,7 +62,7 @@ public class Persona implements Serializable{ //VER PARA QUE SIRVE EL SERIALIZAB
 
     }
     
-    // MAPEADO PARA LA VINCULACION, VER BIEN PARA QUE SIRVE
+   /* // MAPEADO PARA LA VINCULACION, VER BIEN PARA QUE SIRVE
    
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "idEdu")
     private List<Educacion> educacionList;
@@ -72,7 +72,7 @@ public class Persona implements Serializable{ //VER PARA QUE SIRVE EL SERIALIZAB
     
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "idExp")
     private  List<Experiencia> experienciaList;
-
+*/
     
         
 }

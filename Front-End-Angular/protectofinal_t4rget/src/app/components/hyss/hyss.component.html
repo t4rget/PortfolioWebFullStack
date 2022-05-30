@@ -1,107 +1,301 @@
 <div class="card">
   <h1>Hard and Soft Skills</h1>
-  <div class="text-center col-sm-auto col-md-auto col-lg-auto" id="circulos">
-    <circle-progress
-      [percent]="65"
-      [radius]="90"
-      [imageSrc]="'../assets/logos/html.png'"
-      [showImage]="true"
-      [imageWidth]="100"
-      [imageHeight]="100"
-      [outerStrokeWidth]="16"
-      [innerStrokeWidth]="6"
-      [showTitle]="false"
-      [showUnits]="false"
-      [outerStrokeColor]="'#FD7E14'"
-      [innerStrokeColor]="'#111111'"
-      [animation]="true"
-      [animationDuration]="400"
+  <div
+    class="text-center col-sm-auto col-md-auto col-lg-auto"
+    id="circulos"
+    *ngFor="let aptitud of aptitudes"
+  >
+    <div>
+      <circle-progress
+        [percent]="aptitud.nivelApt"
+        [radius]="90"
+        [imageSrc]="'../assets/logos/html.png'"
+        [showImage]="true"
+        [imageWidth]="100"
+        [imageHeight]="100"
+        [outerStrokeWidth]="16"
+        [innerStrokeWidth]="6"
+        [showTitle]="true"
+        [showUnits]="false"
+        [outerStrokeColor]="aptitud.colorbarApt"
+        [innerStrokeColor]="'#111111'"
+        [animation]="true"
+        [animationDuration]="400"
+        ></circle-progress>
+        <div class="row">
+          <a
+            type="button"
+            (click)="onOpenModal('edit',aptitud)"
+            class="btn btn-outline-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#editAptitudModal"
+            id="btn-edit">
+          <i class="bi bi-pencil-square"></i>
+          </a>
+          <a
+            type="button"
+            (click)="onOpenModal('delete',aptitud)"
+            class="btn btn-outline-danger"
+            data-bs-toggle="modal"
+            data-bs-target="#deleteAptitudModal"
+            id="btn-delete"
+          ><i class="bi bi-x-square"></i>
+          </a>
+        </div>
+    </div>
+  </div>
+  <div id="div-add" class="text-center">
+    <!-- Button modal Agregar -->
+    <button
+      id="btn-add" type="button"
+      class="btn btn-outline-success" data-bs-toggle="modal"
+      data-bs-target="#addAptitudModal">
+      <a>
+        <i class="bi bi-plus-square"></i>
+      <span class="sr-only">(current)</span>
+      </a>
+    </button>
+  </div>
+
+  <!-- Modal añadir aptitud -->
+
+  <div class="modal fade" id="addAptitudModal"
+      tabindex="-1" aria-labelledby="addAptitudModalLabel"
+      aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addAptitudModalLabel">Añadir Aptitud</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #addForm="ngForm" (ngSubmit)="onAddAptitud(addForm)">
+            <div class="form-group">
+              <label for="nombreHabilidadApt">Habilidad</label>
+              <input type="text"
+                ngModel
+                name="nombreHabilidadApt"
+                class="form-control"
+                id="nombreHabilidadApt"
+                placeholder="Html"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="nivelApt">Nivel de Avance %</label>
+              <input type="text"
+                ngModel
+                name="nivelApt"
+                class="form-control"
+                id="nivelApt"
+                placeholder="80"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="urlHabilidadApt">URL Imagen</label>
+              <input type="text"
+                ngModel
+                name="urlHabilidadApt"
+                class="form-control"
+                id="urlHabilidadApt"
+                placeholder="html.png"
+                required /> -->
+            </div>
+            <div class="form-group form-control form-control-color">
+              <label for="colorbarApt">Color Indicador</label>
+              <input type="color"
+                class="form-control form-control-color"
+                value=""
+                title="Choose your color"
+                ngModel
+                name="colorbarApt"
+                class="form-control form-control-color"
+                id="colorbarApt"
+                placeholder="#563d7c"
+                required />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            id="add-aptitud-form"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+           >
+            Cerrar
+          </button>
+          <button
+            (click)="onAddAptitud(addForm)"
+            class="btn btn-primary">
+            Guardar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal editar  aptitud -->
+
+  <div
+      class="modal fade"
+      id="editAptitudModal"
+      tabindex="-1"
+      aria-labelledby="aptitudEditModalLabel"
+      aria-hidden="true"
     >
-    </circle-progress>
-    <circle-progress
-      [percent]="40"
-      [radius]="90"
-      [imageSrc]="'../assets/logos/CSS.png'"
-      [showImage]="true"
-      [imageWidth]="100"
-      [imageHeight]="100"
-      [outerStrokeWidth]="16"
-      [innerStrokeWidth]="6"
-      [showTitle]="false"
-      [showUnits]="false"
-      [outerStrokeColor]="'#0D6EFD'"
-      [innerStrokeColor]="'#111111'"
-      [animation]="true"
-      [animationDuration]="400"
-    >
-    </circle-progress>
-    <circle-progress
-      [percent]="60"
-      [radius]="90"
-      [imageSrc]="'../assets/logos/js.png'"
-      [showImage]="true"
-      [imageWidth]="100"
-      [imageHeight]="100"
-      [outerStrokeWidth]="16"
-      [innerStrokeWidth]="6"
-      [showTitle]="false"
-      [showUnits]="false"
-      [outerStrokeColor]="'#FFC107'"
-      [innerStrokeColor]="'#111111'"
-      [animation]="true"
-      [animationDuration]="400"
-    >
-    </circle-progress>
-    <circle-progress
-      [percent]="80"
-      [radius]="90"
-      [imageSrc]="'../assets/logos/git.png'"
-      [showImage]="true"
-      [imageWidth]="100"
-      [imageHeight]="100"
-      [outerStrokeWidth]="16"
-      [innerStrokeWidth]="6"
-      [showTitle]="false"
-      [showUnits]="false"
-      [outerStrokeColor]="'#198754'"
-      [innerStrokeColor]="'#111111'"
-      [animation]="true"
-      [animationDuration]="400"
-    >
-    </circle-progress>
-    <circle-progress
-      [percent]="40"
-      [radius]="90"
-      [imageSrc]="'../assets/logos/eng.png'"
-      [showImage]="true"
-      [imageWidth]="100"
-      [imageHeight]="100"
-      [outerStrokeWidth]="16"
-      [innerStrokeWidth]="4"
-      [showTitle]="false"
-      [showUnits]="false"
-      [outerStrokeColor]="'#198754'"
-      [innerStrokeColor]="'#111111'"
-      [animation]="true"
-      [animationDuration]="400"
-    >
-    </circle-progress>
-    <circle-progress
-      [percent]="80"
-      [radius]="90"
-      [imageSrc]="'../assets/logos/grupal.png'"
-      [showImage]="true"
-      [imageWidth]="100"
-      [imageHeight]="100"
-      [outerStrokeWidth]="16"
-      [innerStrokeWidth]="4"
-      [showTitle]="false"
-      [showUnits]="false"
-      [outerStrokeColor]="'#198754'"
-      [innerStrokeColor]="'#111111'"
-      [animation]="true"
-      [animationDuration]="400"
-    >
-    </circle-progress>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateAptitudModalLabel">
+            Editar {{editAptitud?.nombreHabilidadApt}}
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #editForm="ngForm">
+            <div class="form-group">
+              <label for="name">Habilidad</label>
+              <input
+                type="text"
+                ngModel="{{editAptitud?.nombreHabilidadApt}}"
+                name="nombreHabilidadApt"
+                class="form-control"
+                id="nombreHabilidadApt"
+                aria-describedby="emailHelp"
+                placeholder="Html"
+              />
+            </div>
+            <input
+              type="hidden"
+              ngModel="{{editAptitud?.idApt}}"
+              name="idApt"
+              class="form-control"
+              id="idApt"
+              placeholder=""
+            />
+            <div class="form-group">
+              <label for="nivelApt">Nivel de Avance %</label>
+              <input type="text"
+                ngModel="{{editAptitud?.nivelApt}}"
+                name="nivelApt"
+                class="form-control"
+                id="nivelApt"
+                placeholder="80"
+              />
+            </div>
+            <div class="form-group">
+              <label for="nivelApt">URL Imagen</label>
+              <input type="text"
+                ngModel="{{editAptitud?.urlHabilidadApt}}"
+                name="urlHabilidadApt"
+                class="form-control"
+                id="urlHabilidadApt"
+                placeholder="html.png"
+              /> -->
+            </div>
+            <div class="form-group form-control form-control-color">
+              <label for="colorbarApt">Color Indicador</label>
+              <input type="color"
+                class="form-control form-control-color"
+                value=""
+                title="Choose your color"
+                ngModel="{{editAptitud?.colorbarApt}}"
+                name="colorbarApt"
+                class="form-control form-control-color"
+                id="colorbarApt"
+                placeholder="#563d7c"
+              >
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            id=""
+            data-bs-dismiss="modal"
+            class="btn btn-secondary"
+          >
+          Salir
+          </button>
+          <button
+            (click)="onUpdateAptitud(editForm.value)"
+            data-bs-dismiss="modal"
+            class="btn btn-primary"
+          >
+          Confirmar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal borrar aptitud -->
+
+  <div
+
+    class="modal fade"
+    id="deleteAptitudModal"
+    tabindex="-1"
+    aria-labelledby="deleteModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Borrar Aptitud</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            ¿ Estas seguro que quieres borrar
+            <b>{{deleteAptitud?.nombreHabilidadApt}}</b> ?
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+            id=""
+          >
+            Salir
+          </button>
+          <button
+            (click)="onDeleteAptitud(deleteAptitud!.idApt)"
+            class="button btn btn-danger"
+            data-bs-dismiss="modal"
+          >
+            Confirmar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notificacions Sin Aptitud -->
+
+  <div *ngIf="aptitudes?.length == 0" class="col-auto">
+    <div class="alert alert-info" role="alert">
+      <h4 class="alert-heading">SIN HABILIDADES!</h4>
+      <p>No se encontro ninguna habilidad.</p>
+    </div>
   </div>
 </div>

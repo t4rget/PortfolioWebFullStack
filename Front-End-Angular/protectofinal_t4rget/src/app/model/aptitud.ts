@@ -3,4 +3,5 @@ export interface Aptitud {
   nivelApt: number;
   nombreHabilidadApt: string;
   urlHabilidadApt: string;
+  colorbarApt: string;
 }

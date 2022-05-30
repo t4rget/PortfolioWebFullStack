@@ -71,8 +71,8 @@ button {
 #info-card {
   margin-left: 15px;
   margin-right: 15px;
-  /*border-bottom-left-radius: 3%;
-  border-bottom-right-radius: 3%;*/
+  border-top-left-radius: 0%;
+  border-top-right-radius: 0%;
 }
 
 #acercadeid {

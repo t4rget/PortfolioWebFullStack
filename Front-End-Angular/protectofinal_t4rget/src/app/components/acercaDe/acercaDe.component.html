@@ -3,7 +3,16 @@
   <div id="info-img">
     <img class="image-profile" src="../../../assets/perfil/avatar.jpg"> <!--imagen de perfil-->
     <div class="btn-edit">
-      <a href="http://" class="btn-right"><i class="fa fa-edit"></i></a>
+      <!--<a href="http://" class="btn-right"><i class="fa fa-edit"></i></a>-->
+      <a
+          type="button"
+          (click)="onOpenModal('edit',persona)"
+          class="btn btn-outline-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#editPersonaModal"
+          id="btn-edit">
+        <i class="bi bi-pencil-square"></i>
+        </a>
     </div>
   </div>
   <div id="info-data">
@@ -14,11 +23,11 @@
         <span>{{persona.provinciaPer}} ({{persona.paisPer}})</span>
         <span><a href="#">Informacion de contacto</a></span>
       </div>
-      <div id="info-actions">
+      <!-- <div id="info-actions">
         <button type="button" class="btn btn-primary">Tengo interes en</button>
         <button type="button" class="btn btn-light">Añadir seccion</button>
         <button type="button" class="btn btn-light">Mas</button>
-      </div>
+      </div> -->
     </div>
     <ul id="info-details">
       <a id="data-exp" href="#">
@@ -35,5 +44,336 @@
 </div>
 <div class="card" id="acercadeid">
   <h1 class="mt-3">Acerca de</h1>
+  <div class="row">
+        <a
+          type="button"
+          (click)="onOpenModal('edita',persona)"
+          class="btn btn-outline-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#editaPersonaModal"
+          id="btn-edit">
+        <i class="bi bi-pencil-square"></i>
+        </a>
     <p class="mt-4">{{persona?.sobreMiPer}}</p>
 </div>
+</div>
+
+<!-- MOdal edita Persona -->
+
+<!-- Modal editar  Acerca de -->
+
+  <div
+      class="modal fade"
+      id="editPersonaModal"
+      tabindex="-1"
+      aria-labelledby="personaEditModalLabel"
+      aria-hidden="true"
+    >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updatePersonaModalLabel">
+            Editar <b>{{persona?.apellidoPer}} {{persona?.nombrePer}}</b>
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #editForm="ngForm">
+            <input
+              type="hidden"
+              class="form-control"
+              id="sobreMiPer"
+              ngModel="{{editPersona?.sobreMiPer}}"
+              name="sobreMiPer"
+              placeholder="Reseña de persona"
+            />
+            <input
+              type="hidden"
+              ngModel="{{editPersona?.id}}"
+              name="id"
+              class="form-control"
+              id="id"
+              placeholder=""
+            />
+            <label for="nombrePer">Nombre</label>
+            <input
+              type="text"
+              ngModel="{{editPersona?.nombrePer}}"
+              name="nombrePer"
+              class="form-control"
+              id="nombrePer"
+              placeholder=""
+            />
+            <label for="apellidoPer">Apellido</label>
+            <input
+              type="text"
+              ngModel="{{editPersona?.apellidoPer}}"
+              name="apellidoPer"
+              class="form-control"
+              id="apellidoPer"
+              placeholder=""
+            />
+            <label for="direccionPer">Direccion</label>
+            <input
+              type="text"
+              ngModel="{{editPersona?.direccionPer}}"
+              name="direccionPer"
+              class="form-control"
+              id="direccionPer"
+              placeholder=""
+            />
+            <label for="ciudadPer">Ciudad</label>
+            <input
+              type="text"
+              ngModel="{{editPersona?.ciudadPer}}"
+              name="ciudadPer"
+              class="form-control"
+              id="ciudadPer"
+              placeholder=""
+            />
+            <label for="provinciaPer">Provincia</label>
+            <input
+              type="text"
+              ngModel="{{editPersona?.provinciaPer}}"
+              name="provinciaPer"
+              class="form-control"
+              id="provinciaPer"
+              placeholder=""
+            />
+            <label for="paisPer">Pais</label>
+            <input
+              type="text"
+              ngModel="{{editPersona?.paisPer}}"
+              name="paisPer"
+              class="form-control"
+              id="paisPer"
+              placeholder=""
+            />
+            <label for="tituloPer">Titulo</label>
+            <input
+              type="text"
+              ngModel="{{editPersona?.tituloPer}}"
+              name="tituloPer"
+              class="form-control"
+              id="tituloPer"
+              placeholder=""
+            />
+            <label for="fotoPerfilPer">URL Imagen Perfil</label>
+            <input
+              type="text"
+              ngModel="{{editPersona?.fotoPerfilPer}}"
+              name="fotoPerfilPer"
+              class="form-control"
+              id="fotoPerfilPer"
+              placeholder=""
+            />
+            <label for="telefonoPer">Telefono</label>
+            <input
+              type="text"
+              ngModel="{{editPersona?.telefonoPer}}"
+              name="telefonoPer"
+              class="form-control"
+              id="telefonoPer"
+              placeholder=""
+            />
+            <label for="emailPer">Email</label>
+            <input
+              type="text"
+              ngModel="{{editPersona?.emailPer}}"
+              name="emailPer"
+              class="form-control"
+              id="emailPer"
+              placeholder=""
+            />
+            <label for="fechaNacPer">Fecha de Nacimiento</label>
+            <input
+              type="text"
+              ngModel="{{editPersona?.fechaNacPer}}"
+              name="fechaNacPer"
+              class="form-control"
+              id="fechaNacPer"
+              placeholder=""
+            />
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            id=""
+            data-bs-dismiss="modal"
+            class="btn btn-secondary"
+          >
+          Salir
+          </button>
+          <button
+            (click)="onUpdatePersona(editForm.value)"
+            data-bs-dismiss="modal"
+            class="btn btn-primary"
+          >
+          Confirmar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal editar  Acerca de -->
+
+  <div
+      class="modal fade"
+      id="editaPersonaModal"
+      tabindex="-1"
+      aria-labelledby="personaEditModalLabel"
+      aria-hidden="true"
+    >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updatePersonaModalLabel">
+            Editar <b>Acerca de</b>
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #editaForm="ngForm">
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                id="sobreMiPer" type="text"
+                ngModel="{{editaPersona?.sobreMiPer}}"
+                name="sobreMiPer"
+                placeholder="Reseña de persona"
+                aria-describedby="emailHelp"
+                rows="3">
+              </textarea>
+            </div>
+            <input
+              type="hidden"
+              ngModel="{{editaPersona?.id}}"
+              name="id"
+              class="form-control"
+              id="id"
+              placeholder=""
+            />
+            <input
+              type="hidden"
+              ngModel="{{editaPersona?.nombrePer}}"
+              name="nombrePer"
+              class="form-control"
+              id="nombrePer"
+              placeholder=""
+            />
+            <input
+              type="hidden"
+              ngModel="{{editaPersona?.apellidoPer}}"
+              name="apellidoPer"
+              class="form-control"
+              id="apellidoPer"
+              placeholder=""
+            />
+            <input
+              type="hidden"
+              ngModel="{{editaPersona?.direccionPer}}"
+              name="direccionPer"
+              class="form-control"
+              id="direccionPer"
+              placeholder=""
+            />
+            <input
+              type="hidden"
+              ngModel="{{editaPersona?.ciudadPer}}"
+              name="ciudadPer"
+              class="form-control"
+              id="ciudadPer"
+              placeholder=""
+            />
+            <input
+              type="hidden"
+              ngModel="{{editaPersona?.provinciaPer}}"
+              name="provinciaPer"
+              class="form-control"
+              id="provinciaPer"
+              placeholder=""
+            />
+            <input
+              type="hidden"
+              ngModel="{{editaPersona?.paisPer}}"
+              name="paisPer"
+              class="form-control"
+              id="paisPer"
+              placeholder=""
+            />
+            <input
+              type="hidden"
+              ngModel="{{editaPersona?.tituloPer}}"
+              name="tituloPer"
+              class="form-control"
+              id="tituloPer"
+              placeholder=""
+            />
+            <input
+              type="hidden"
+              ngModel="{{editaPersona?.fotoPerfilPer}}"
+              name="fotoPerfilPer"
+              class="form-control"
+              id="fotoPerfilPer"
+              placeholder=""
+            />
+            <input
+              type="hidden"
+              ngModel="{{editaPersona?.telefonoPer}}"
+              name="telefonoPer"
+              class="form-control"
+              id="telefonoPer"
+              placeholder=""
+            />
+            <input
+              type="hidden"
+              ngModel="{{editaPersona?.emailPer}}"
+              name="emailPer"
+              class="form-control"
+              id="emailPer"
+              placeholder=""
+            />
+            <input
+              type="hidden"
+              ngModel="{{editaPersona?.fechaNacPer}}"
+              name="fechaNacPer"
+              class="form-control"
+              id="fechaNacPer"
+              placeholder=""
+            />
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            id=""
+            data-bs-dismiss="modal"
+            class="btn btn-secondary"
+          >
+          Salir
+          </button>
+          <button
+            (click)="onUpdatePersonaa(editaForm.value)"
+            data-bs-dismiss="modal"
+            class="btn btn-primary"
+          >
+          Confirmar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
