@@ -1,13 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.t4rget.portfolio.security;
 
-/**
- *
- * @author jhon
- */
+import javax.validation.constraints.Email;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
+
+@Getter @Setter
 public class AuthRequest {
-    
+
+    @Email
+    @Length(min=5, max=100)
+    private String email;
+    @Length(min=5, max=50)
+    private String password;
 }

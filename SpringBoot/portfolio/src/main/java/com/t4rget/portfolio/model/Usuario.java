@@ -13,7 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Getter @Setter
-public class Usuarios implements UserDetails {
+public class Usuario implements UserDetails {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +23,18 @@ public class Usuarios implements UserDetails {
     private String email;
    @Column(nullable = false)
     private String password;
+
+    // contructor
+
+    public Usuario() {
+    }
+
+    public Usuario(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+   
+   
 
     
     // METODOS ABSTRACTOS

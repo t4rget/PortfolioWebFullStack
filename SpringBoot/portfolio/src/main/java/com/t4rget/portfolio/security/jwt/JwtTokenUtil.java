@@ -2,19 +2,22 @@
 package com.t4rget.portfolio.security.jwt;
 
 
-import com.t4rget.portfolio.model.Usuarios;
-import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.JwtParser;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.MalformedJwtException;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.SignatureException;
-import io.jsonwebtoken.UnsupportedJwtException;
-import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Value;
+
+import com.t4rget.portfolio.model.Usuario;
+import java.util.Date;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.SignatureException;
+import io.jsonwebtoken.UnsupportedJwtException;
+import io.jsonwebtoken.SignatureAlgorithm;
+
 
 @Component
 public class JwtTokenUtil {
@@ -27,7 +30,7 @@ public class JwtTokenUtil {
     private String secretKey;
     
     // generamos el token
-    public String generateAccessToken(Usuarios usuarios){
+    public String generateAccessToken(Usuario usuarios){
         return Jwts.builder()
                         .setSubject(usuarios.getIdU()+ "," + usuarios.getEmail())
                         .setIssuer("CodeJava")
@@ -55,15 +58,15 @@ public class JwtTokenUtil {
         }return false;
     }
     
-    public String getSubject(String token){
+    public String getSubject(String token) {
         return parseClaims(token).getSubject();
     }
-    
-    priivate Claims parseClaims(String token){
+     
+    private Claims parseClaims(String token) {
         return Jwts.parser()
-                        .setSigninKey(secretKey)
-                        .parseClaimsJws(token)
-                        .getBody();
+                .setSigningKey(secretKey)
+                .parseClaimsJws(token)
+                .getBody();
     }
     
     
