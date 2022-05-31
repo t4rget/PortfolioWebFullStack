@@ -32,7 +32,7 @@ public class JwtTokenUtil {
     // generamos el token
     public String generateAccessToken(Usuario usuarios){
         return Jwts.builder()
-                        .setSubject(usuarios.getIdU()+ "," + usuarios.getEmail())
+                        .setSubject(usuarios.getId()+ "," + usuarios.getEmail())
                         .setIssuer("CodeJava")
                         .setIssuedAt(new Date())
                         .setExpiration(new Date(System.currentTimeMillis()+EXPIRE_DURATION))

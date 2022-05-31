@@ -25,17 +25,18 @@ public class AuthApi {
         try {
             Authentication authentication = authManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
-                            request.getEmail(), request.getPassword())
-            );
-           //Acá dice que el usuario y contraseña estan mal
+                            request.getEmail(), request.getPassword()));
+           
             Usuario usuarios = (Usuario) authentication.getPrincipal();
             String accessToken = jwtUtil.generateAccessToken(usuarios);
+            System.out.println(AuthRequest.class);
             AuthResponse response = new AuthResponse(usuarios.getEmail(), accessToken);
              
             return ResponseEntity.ok().body(response);
              
         } catch (BadCredentialsException ex) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            
+             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
     }
 }

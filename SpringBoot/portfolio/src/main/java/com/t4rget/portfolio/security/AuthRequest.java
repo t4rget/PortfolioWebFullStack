@@ -12,6 +12,7 @@ public class AuthRequest {
     @Email
     @Length(min=5, max=100)
     private String email;
-    @Length(min=5, max=50)
+
+   @Length(min=8)
     private String password;
 }

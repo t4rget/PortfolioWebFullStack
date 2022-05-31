@@ -32,7 +32,7 @@ public class UsuarioRepositoryTests {
         Usuario newUsuario=new Usuario("admin@admin.com",encodePassword);
         Usuario savedUsuario=repo.save(newUsuario);
         assertThat(savedUsuario).isNotNull();
-        assertThat(savedUsuario.getIdU()).isGreaterThan(0);
+        assertThat(savedUsuario.getId()).isGreaterThan(0);
     
     }
     
