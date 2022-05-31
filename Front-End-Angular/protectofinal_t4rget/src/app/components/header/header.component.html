@@ -2,8 +2,8 @@
   <div id="encabezado">
       <app-logo-arg-p></app-logo-arg-p>
       <app-socialnet></app-socialnet>
-      <div id="login">
-        <form method="GET" action="https://localhost:4200/iniciar-sesion">
+      <div (click)="Login()" id="login">
+        <form>
           <button class="btn btn-primary" type="button">Login</button>
         </form>
       </div>

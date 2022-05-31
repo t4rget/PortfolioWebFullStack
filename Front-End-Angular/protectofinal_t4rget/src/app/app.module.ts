@@ -15,7 +15,7 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
+import { LoginComponent } from './components/login/login.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SettingComponent } from './components/setting/setting.component'
@@ -33,7 +33,7 @@ import { FormsModule } from '@angular/forms';
     EducacionComponent,
     ProyectosComponent,
     FooterComponent,
-    IniciarSesionComponent,
+    LoginComponent,
     PortfolioComponent,
     SettingComponent
   ],

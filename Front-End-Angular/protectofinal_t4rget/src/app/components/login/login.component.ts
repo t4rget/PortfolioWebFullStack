@@ -3,11 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-iniciar-sesion',
-  templateUrl: './iniciar-sesion.component.html',
-  styleUrls: ['./iniciar-sesion.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class IniciarSesionComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
   form:FormGroup;
   constructor(private formBuilder:FormBuilder, private ruta:Router) {
@@ -35,9 +35,7 @@ export class IniciarSesionComponent implements OnInit {
     return this.form.get('password');
   }
 
-  onSalir(event:Event)
-  {
-    event.preventDefault;
+  onSalir() {
     this.ruta.navigate(['/portfolio']);  /* ME QUEDE EN ESTA PARTE DEL VIDEO DE LA PROFE*/
   }
 
