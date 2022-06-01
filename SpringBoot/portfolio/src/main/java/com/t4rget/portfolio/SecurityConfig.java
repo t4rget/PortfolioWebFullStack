@@ -35,12 +35,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     
     
     // TEMPORALMENTE SE HABILITAN TODOS LOS GET
-    @Override
+    /*@Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
         http.authorizeRequests().anyRequest().permitAll();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-    }
+    }*/
     
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
