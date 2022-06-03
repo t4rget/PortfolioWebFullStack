@@ -22,6 +22,10 @@ import { SettingComponent } from './components/setting/setting.component'
 import { FormsModule } from '@angular/forms';
 import { InterceptorService } from './service/interceptor.service';
 import { ExperienciaService } from './service/experiencia.service';
+import { AptitudService } from './service/aptitud.service';
+import { EducacionService } from './service/educacion.service';
+import { PersonaService } from './service/persona.service';
+import { ProyectoService } from './service/proyecto.service';
 
 @NgModule({
   declarations: [
@@ -50,9 +54,11 @@ import { ExperienciaService } from './service/experiencia.service';
   ],
   providers: [/*
   PortfolioService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}*/
-  ExperienciaService,
-{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}
-
+  AptitudService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},
+  EducacionService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},
+  ExperienciaService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},
+  PersonaService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},
+  ProyectoService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}
   ],
 
   bootstrap: [AppComponent]

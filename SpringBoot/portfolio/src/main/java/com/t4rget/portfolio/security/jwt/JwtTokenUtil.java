@@ -30,13 +30,13 @@ public class JwtTokenUtil {
     private String secretKey;
     
     // generamos el token
-    public String generateAccessToken(Usuario usuarios){
+    public String generateAccessToken(Usuario usuario){
         return Jwts.builder()
-                        .setSubject(usuarios.getId()+ "," + usuarios.getEmail())
-                        .setIssuer("CodeJava")
+                        .setSubject(usuario.getId()+ "," + usuario.getEmail())
+                        .setIssuer("t4rget")
                         .setIssuedAt(new Date())
                         .setExpiration(new Date(System.currentTimeMillis()+EXPIRE_DURATION))
-                        .signWith(SignatureAlgorithm.HS512,secretKey)
+                        .signWith(SignatureAlgorithm.HS512, secretKey)
                         .compact();
         
     }

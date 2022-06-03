@@ -24,12 +24,12 @@ public class UsuarioRepositoryTests {
     // puede ser que aca no este encryptando bien el password?
     
     @Test
-    public void testCreateUser(){
-        PasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
-        String rawPassword ="admin123";
-        String encodePassword=passwordEncoder.encode(rawPassword);
+    public void testCreateUser() {
+        BCryptPasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
+        String rawPassword= "admin2022";
+        String password = passwordEncoder.encode(rawPassword);
         
-        Usuario newUsuario=new Usuario("admin@admin.com",encodePassword);
+        Usuario newUsuario=new Usuario("admin2022@admin.com", password);
         Usuario savedUsuario=repo.save(newUsuario);
         assertThat(savedUsuario).isNotNull();
         assertThat(savedUsuario.getId()).isGreaterThan(0);

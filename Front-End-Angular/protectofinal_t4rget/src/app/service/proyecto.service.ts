@@ -14,19 +14,19 @@ export class ProyectoService {
   constructor(private http: HttpClient) { }
 
   public getProyecto():Observable<Proyecto[]> {
-    return this.http.get<Proyecto[]>(`${this.apiServerUrl}/proyecto/all`);
+    return this.http.get<Proyecto[]>(`${this.apiServerUrl}/api/proyecto/all`);
   }
 
   public addProyecto(proyecto: Proyecto):Observable<Proyecto>{
-    return this.http.post<Proyecto>(`${this.apiServerUrl}/proyecto/add`,proyecto);
+    return this.http.post<Proyecto>(`${this.apiServerUrl}/api/proyecto/add`,proyecto);
   }
 
   public updateProyecto(proyecto:Proyecto):Observable<Proyecto>{
-    return this.http.put<Proyecto>(`${this.apiServerUrl}/proyecto/update`,proyecto);
+    return this.http.put<Proyecto>(`${this.apiServerUrl}/api/proyecto/update`,proyecto);
   }
 
   public deleteProyecto(proyectoId:number):Observable<void>{
-    return this.http.delete<void>(`${this.apiServerUrl}/proyecto/delete/${proyectoId}`);
+    return this.http.delete<void>(`${this.apiServerUrl}/api/proyecto/delete/${proyectoId}`);
   }
 
 }

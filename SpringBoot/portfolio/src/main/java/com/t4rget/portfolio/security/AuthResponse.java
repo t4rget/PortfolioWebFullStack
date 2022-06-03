@@ -8,14 +8,14 @@ import lombok.Setter;
 public class AuthResponse {
     
     private String email;
-    private String accesToken;
+    private String accessToken;
 
     public AuthResponse() {
     }
 
-    public AuthResponse(String email, String accesToken) {
+    public AuthResponse(String email, String accessToken) {
         this.email = email;
-        this.accesToken = accesToken;
+        this.accessToken = accessToken;
     }
     
     
