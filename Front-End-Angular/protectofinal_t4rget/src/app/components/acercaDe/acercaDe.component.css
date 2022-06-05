@@ -101,3 +101,19 @@ button {
 .mt-4 {
   margin-left: 50px;
 }
+
+#btn-edit {
+  height: 40px;
+  width: 46px;
+  border-color: transparent;
+}
+
+#titleacer {
+  display: inline-flex;
+}
+
+.row {
+  margin-left: auto;
+  margin-right: 5%;
+  margin-top: 20px;
+}

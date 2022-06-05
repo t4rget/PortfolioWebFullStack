@@ -43,19 +43,21 @@
   </div>
 </div>
 <div class="card" id="acercadeid">
-  <h1 class="mt-3">Acerca de</h1>
-  <div class="row">
-        <a
-          type="button"
-          (click)="onOpenModal('edita',persona)"
-          class="btn btn-outline-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#editaPersonaModal"
-          id="btn-edit">
-        <i class="bi bi-pencil-square"></i>
-        </a>
-    <p class="mt-4">{{persona?.sobreMiPer}}</p>
-</div>
+  <div id="titleacer">
+    <h1 class="mt-3">Acerca de</h1>
+    <div class="row">
+          <a
+            type="button"
+            (click)="onOpenModal('edita',persona)"
+            class="btn btn-outline-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#editaPersonaModal"
+            id="btn-edit">
+          <i class="bi bi-pencil-square"></i>
+          </a>
+    </div>
+  </div>
+  <p class="mt-4">{{persona?.sobreMiPer}}</p>
 </div>
 
 <!-- MOdal edita Persona -->
