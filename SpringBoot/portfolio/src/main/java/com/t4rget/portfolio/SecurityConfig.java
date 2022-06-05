@@ -42,23 +42,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         return new BCryptPasswordEncoder();
     }
     
-     
-    // TEMPORALMENTE SE HABILITAN TODOS LOS GET
-    /*@Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable();
-        http.authorizeRequests().anyRequest().permitAll();
-        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-    }*/
-    
-    /*@Override
-    protected void configure(HttpSecurity http) throws Exception {
-    http.csrf().disable();
-    http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-     
-    http.authorizeRequests().antMatchers("/api/login").permitAll().anyRequest().authenticated();
-    }*/
-    
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(

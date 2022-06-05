@@ -7,3 +7,36 @@
 h1 {
   margin-left: 15px;
 }
+
+#modaladdeditskills {
+  display: table-row-group;
+}
+
+#div-add {
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+i {
+  width: 40px;
+  height: 40px;
+}
+
+#btn-delete {
+  /*background-color: red;*/
+  height: 40px;
+  width: 46px;
+  border-color: transparent;
+  margin-left: 10px;
+}
+
+#btn-edit {
+  height: 40px;
+  width: 46px;
+  border-color: transparent;
+}
+
+#circulos {
+  text-align: center;
+}
+

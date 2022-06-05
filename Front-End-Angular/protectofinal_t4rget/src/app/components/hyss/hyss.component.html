@@ -1,47 +1,51 @@
 <div class="card">
   <h1>Hard and Soft Skills</h1>
-  <div
-    class="text-center col-sm-auto col-md-auto col-lg-auto"
-    id="circulos"
-    *ngFor="let aptitud of aptitudes"
-  >
-    <div>
-      <circle-progress
-        [percent]="aptitud.nivelApt"
-        [radius]="90"
-        [imageSrc]="'../assets/logos/html.png'"
-        [showImage]="true"
-        [imageWidth]="100"
-        [imageHeight]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="6"
-        [showTitle]="true"
-        [showUnits]="false"
-        [outerStrokeColor]="aptitud.colorbarApt"
-        [innerStrokeColor]="'#111111'"
-        [animation]="true"
-        [animationDuration]="400"
-        ></circle-progress>
-        <div class="row">
-          <a
-            type="button"
-            (click)="onOpenModal('edit',aptitud)"
-            class="btn btn-outline-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#editAptitudModal"
-            id="btn-edit">
-          <i class="bi bi-pencil-square"></i>
-          </a>
-          <a
-            type="button"
-            (click)="onOpenModal('delete',aptitud)"
-            class="btn btn-outline-danger"
-            data-bs-toggle="modal"
-            data-bs-target="#deleteAptitudModal"
-            id="btn-delete"
-          ><i class="bi bi-x-square"></i>
-          </a>
-        </div>
+  <div class="row"
+    >
+    <div
+      class="col"
+      id="circulos"
+      *ngFor="let aptitud of aptitudes"
+    >
+          <circle-progress
+          [percent]="aptitud.nivelApt"
+          [radius]="80"
+          [space]="-13"
+          [imageSrc]="'../assets/logos/html.png'"
+          [showImage]="true"
+          [imageWidth]="100"
+          [imageHeight]="100"
+          [outerStrokeWidth]="16"
+          [outerStrokeColor]="aptitud.colorbarApt"
+          [innerStrokeWidth]="10"
+          [showTitle]="true"
+          [showUnits]="false"
+          [showBackground]="false"
+          [innerStrokeColor]="'#e7e8ea'"
+          [animation]="true"
+          [lazy]="true"
+          [animationDuration]="700"
+          ></circle-progress>
+          <div class="row justify-content-center">
+            <a
+              type="button"
+              (click)="onOpenModal('edit',aptitud)"
+              class="btn btn-outline-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#editAptitudModal"
+              id="btn-edit">
+            <i class="bi bi-pencil-square"></i>
+            </a>
+            <a
+              type="button"
+              (click)="onOpenModal('delete',aptitud)"
+              class="btn btn-outline-danger"
+              data-bs-toggle="modal"
+              data-bs-target="#deleteAptitudModal"
+              id="btn-delete"
+            ><i class="bi bi-x-square"></i>
+            </a>
+          </div>
     </div>
   </div>
   <div id="div-add" class="text-center">
@@ -104,10 +108,10 @@
                 class="form-control"
                 id="urlHabilidadApt"
                 placeholder="html.png"
-                required /> -->
+                required />
             </div>
-            <div class="form-group form-control form-control-color">
-              <label for="colorbarApt">Color Indicador</label>
+            <div id="modaladdeditskills" class="form-group form-control form-control-color">
+              <label for="colorbarApt">Color de Avance</label>
               <input type="color"
                 class="form-control form-control-color"
                 value=""
@@ -203,10 +207,10 @@
                 class="form-control"
                 id="urlHabilidadApt"
                 placeholder="html.png"
-              /> -->
+              />
             </div>
-            <div class="form-group form-control form-control-color">
-              <label for="colorbarApt">Color Indicador</label>
+            <div id="modaladdeditskills" class="form-group form-control form-control-color">
+              <label for="colorbarApt">Color de Avance</label>
               <input type="color"
                 class="form-control form-control-color"
                 value=""

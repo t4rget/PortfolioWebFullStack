@@ -15,28 +15,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class AuthApi {
-    
-    /*@Autowired AuthenticationManager authManager;
-    @Autowired JwtTokenUtil jwtUtil;
-    @PostMapping("/api/login")
-    public ResponseEntity<?> login(@RequestBody @Valid AuthRequest request) {
-        try {
-            Authentication authentication = authManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(
-                            request.getEmail(), request.getPassword())
-            );
-           
-            Usuario usuarios = (Usuario) authentication.getPrincipal();
-            String accessToken = jwtUtill.generateAccessToken(usuarios);
-            System.out.println(AuthRequest.class);
-            AuthResponse response = new AuthResponse(usuarios.getEmail(), accessToken);
-             
-            return ResponseEntity.ok().body(response);
-             
-        } catch (BadCredentialsException ex) {
-            
-             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-        }*/
         
         @Autowired AuthenticationManager authManager;
         @Autowired JwtTokenUtil jwtTokeUtil;
