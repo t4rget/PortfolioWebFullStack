@@ -3,7 +3,7 @@
   <div class="row"
     >
     <div
-      class="col"
+      class="col col-lg-3 col-xl-3 col-xxl-3"
       id="circulos"
       *ngFor="let aptitud of aptitudes"
     >
@@ -13,8 +13,8 @@
           [space]="-13"
           [imageSrc]="'../assets/logos/html.png'"
           [showImage]="true"
-          [imageWidth]="100"
-          [imageHeight]="100"
+          [imageWidth]="90"
+          [imageHeight]="90"
           [outerStrokeWidth]="16"
           [outerStrokeColor]="aptitud.colorbarApt"
           [innerStrokeWidth]="10"
@@ -25,6 +25,7 @@
           [animation]="true"
           [lazy]="true"
           [animationDuration]="700"
+          [clockwise]="false"
           ></circle-progress>
           <div class="row justify-content-center">
             <a

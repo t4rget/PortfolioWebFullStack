@@ -1,7 +1,10 @@
-<div *ngIf="persona" class="card mat-card" id="info-card">
+<div *ngIf="persona" class="card" id="info-card">
+
+  <img class="img-responsive" id="image-banner" src="../../../assets/perfil/portada.jpg_large"> <!--imagen de banner-->
+
   <div id="info-pad" style="padding: 16px">
   <div id="info-img">
-    <img class="image-profile" src="../../../assets/perfil/avatar.jpg"> <!--imagen de perfil-->
+    <img class="rounded-circle" id="image-profile" src="../../../assets/perfil/avatar.jpg"> <!--imagen de perfil-->
     <div class="btn-edit">
       <!--<a href="http://" class="btn-right"><i class="fa fa-edit"></i></a>-->
       <a
@@ -20,7 +23,7 @@
       <h1>{{persona.apellidoPer}} {{persona.nombrePer}}</h1>
       <div id="info-company">{{persona.tituloPer}}</div>
       <div id="info-contacto">
-        <span>{{persona.provinciaPer}} ({{persona.paisPer}})</span>
+        <span>{{persona.provinciaPer}} ({{persona.paisPer}})  </span>
         <span><a href="#">Informacion de contacto</a></span>
       </div>
       <!-- <div id="info-actions">
