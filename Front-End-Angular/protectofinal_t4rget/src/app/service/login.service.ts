@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,6 +25,8 @@ export class LoginService {
       return data;
     }))
   }
+
+  Logout():{}
 
   get UsuarioAutenticado() {
     return this.currentUserSubject.value;
