@@ -31,7 +31,7 @@ public class PersonaController {
         return new ResponseEntity<>(persona, HttpStatus.OK);  
     }
     
-    @PutMapping("/update")
+    @PutMapping
     public ResponseEntity<Persona> editarPersona(@RequestBody Persona persona){
         
         Persona updatePersona=personaService.editarPersona(persona);

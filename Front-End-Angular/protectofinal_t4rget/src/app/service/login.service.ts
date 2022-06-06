@@ -12,7 +12,7 @@ export class LoginService {
   currentUserSubject: BehaviorSubject<any>;
 
   constructor(private http: HttpClient) {
-    console.log("el servicio de autenticacion esta corriendo");
+    console.log("el servicio de autenticacion esta en espera/corriendo");
     this.currentUserSubject=new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser')||'{}'));
   }
 

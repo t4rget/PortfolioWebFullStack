@@ -54,12 +54,12 @@ import { ProyectoService } from './service/proyecto.service';
   ],
   providers: [/*
   PortfolioService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}*/
-  AptitudService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},
+  /*AptitudService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},
   EducacionService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},
   ExperienciaService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},
-  /*PersonaService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},
-  */ProyectoService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}
-  ],
+  *//*PersonaService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true},
+  *//*ProyectoService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}
+*/],
 
   bootstrap: [AppComponent]
 })
