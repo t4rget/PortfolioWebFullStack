@@ -20,7 +20,7 @@ export class GuardGuard implements CanActivate {
       }
       else
       {
-        /*this.router.navigate(['/login']);*/
+        this.router.navigate(['/login']);
         return false;
       }
   }

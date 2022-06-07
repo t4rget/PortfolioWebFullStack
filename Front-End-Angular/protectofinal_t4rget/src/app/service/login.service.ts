@@ -26,7 +26,9 @@ export class LoginService {
     }))
   }
 
-  Logout():{}
+  Logout(): void {
+    sessionStorage.removeItem('currentUser');
+  }
 
   get UsuarioAutenticado() {
     return this.currentUserSubject.value;

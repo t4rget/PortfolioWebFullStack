@@ -30,4 +30,9 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  Logout(){
+    this.loginService.Logout();
+    this.estaLogeado=false;
+  }
+
 }

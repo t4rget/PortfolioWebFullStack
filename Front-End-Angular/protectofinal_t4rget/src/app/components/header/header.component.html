@@ -2,9 +2,9 @@
   <div id="encabezado">
       <app-logo-arg-p></app-logo-arg-p>
       <app-socialnet></app-socialnet>
-      <div (click)="Login()" id="login">
-        <button *ngIf="!estaLogeado" class="btn btn-primary" type="button">Login</button>
-        <button *ngIf="estaLogeado" class="btn btn-primary" type="button">Logout</button>
+      <div id="login">
+        <button *ngIf="!estaLogeado" (click)="Login()" class="btn btn-primary" type="button">Login</button>
+        <button *ngIf="estaLogeado" (click)="Logout()"class="btn btn-primary" type="button">Logout</button>
       </div>
   </div>
 </div>
