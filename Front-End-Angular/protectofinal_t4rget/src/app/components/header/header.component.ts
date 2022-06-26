@@ -10,20 +10,16 @@ import { LoginService } from 'src/app/service/login.service';
 
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router, private loginService: LoginService) { }
+  constructor(private router: Router, private loginService: LoginService) {
+    this.loginService.estadoLogeadoSubject.subscribe(data => {
+      this.estaLogeado=data;
+    });
+  }
 
-  estaLogeado=false;
+  estaLogeado: Boolean | undefined;
 
   ngOnInit(): void {
 
-    if (this.loginService.UsuarioAutenticado)
-    {
-      this.estaLogeado=true;
-    }
-    else
-    {
-      this.estaLogeado=false;
-    }
   }
 
   Login(){
@@ -32,7 +28,6 @@ export class HeaderComponent implements OnInit {
 
   Logout(){
     this.loginService.Logout();
-    this.estaLogeado=false;
   }
 
 }

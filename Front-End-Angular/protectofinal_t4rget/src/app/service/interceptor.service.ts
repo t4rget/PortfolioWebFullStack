@@ -11,17 +11,20 @@ export class InterceptorService implements HttpInterceptor {
   constructor(private loginService: LoginService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
-    var currentUser=this.loginService.UsuarioAutenticado;
-    if(currentUser && currentUser.accessToken)
+    var session = sessionStorage.getItem('currentUser') as unknown as datos;
+    //console.log("SESSION LOG", session);
+    if(session && session.accessToken)
     {
       req=req.clone({
         setHeaders:{
-          Authorization: `Bearer ${currentUser.accessToken}`
+          Authorization: `Bearer ${session.accessToken}`
         }
       })
     }
-    console.log("Interceptor esta corriendo" /*+ JSON.stringify(currentUser.accessToken)*/);
+    //console.log("Interceptor esta corriendo" /*+ JSON.stringify(currentUser.accessToken)*/);
     return next.handle(req);
   }
+}
+export interface datos{
+  accessToken: string;
 }

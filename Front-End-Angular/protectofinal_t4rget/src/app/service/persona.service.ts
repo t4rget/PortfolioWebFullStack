@@ -22,7 +22,7 @@ export class PersonaService {
   }
 
   public updatePersona(persona:Persona):Observable<Persona>{
-    return this.http.put<Persona>(`${this.apiServerUrl}/api/persona/update`,persona);
+    return this.http.put<Persona>(`${this.apiServerUrl}/api/persona`,persona);
   }
 
   public deletePersona(personaId:number):Observable<void>{

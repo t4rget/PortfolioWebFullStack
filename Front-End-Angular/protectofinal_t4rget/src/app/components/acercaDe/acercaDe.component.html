@@ -48,7 +48,7 @@
 <div class="card" id="acercadeid">
   <div id="titleacer">
     <h1 class="mt-3">Acerca de</h1>
-    <div class="row">
+    <div *ngIf="estaLogeado"  class="row">
           <a
             type="button"
             (click)="onOpenModal('edita',persona)"

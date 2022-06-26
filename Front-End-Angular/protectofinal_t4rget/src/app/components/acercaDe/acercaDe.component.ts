@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Persona } from 'src/app/model/persona';
+import { LoginService } from 'src/app/service/login.service';
 import { PersonaService } from 'src/app/service/persona.service';
 
 @Component({
@@ -14,14 +15,20 @@ export class AcercaDeComponent implements OnInit {
   public persona : Persona | undefined;
   public editPersona : Persona | undefined;
   public editaPersona : Persona | undefined;
+  public estaLogeado : Boolean | undefined=false;
 
-  constructor(private personaService : PersonaService) { }
+  constructor(private personaService : PersonaService, private loginService : LoginService) {
+    this.loginService.estadoLogeadoSubject.subscribe(data => {
+      this.estaLogeado=data;
+    });
+   }
 
   ngOnInit(): void {
 
     this.getPersona()
 
   }
+
 
   /*public getPersona():void{
     this.personaService.getPersona().subscribe({
