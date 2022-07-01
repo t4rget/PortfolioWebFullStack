@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Proyecto } from 'src/app/model/proyecto';
+import { LoginService } from 'src/app/service/login.service';
 import { ProyectoService } from 'src/app/service/proyecto.service';
 
 @Component({
@@ -14,8 +15,13 @@ export class ProyectosComponent implements OnInit {
   public proyectos:Proyecto[]=[];
   public editProyecto: Proyecto | undefined;
   public deleteProyecto: Proyecto | undefined;
+  public estaLogeado: Boolean | undefined;
 
-  constructor(private proyectoService : ProyectoService) { }
+  constructor(private proyectoService : ProyectoService, private loginService : LoginService) {
+    this.loginService.estadoLogeadoSubject.subscribe(data => {
+      this.estaLogeado = data;
+    });
+   }
 
   ngOnInit(): void {
 

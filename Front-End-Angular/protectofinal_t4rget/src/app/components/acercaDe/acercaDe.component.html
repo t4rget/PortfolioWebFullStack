@@ -5,7 +5,7 @@
   <div id="info-pad" style="padding: 16px">
   <div id="info-img">
     <img class="rounded-circle" id="image-profile" src="../../../assets/perfil/avatar.jpg"> <!--imagen de perfil-->
-    <div class="btn-edit">
+    <div *ngIf="estaLogeado" class="btn-edit">
       <!--<a href="http://" class="btn-right"><i class="fa fa-edit"></i></a>-->
       <a
           type="button"

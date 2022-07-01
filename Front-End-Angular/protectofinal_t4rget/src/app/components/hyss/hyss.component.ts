@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Aptitud } from 'src/app/model/aptitud';
 import { AptitudService } from 'src/app/service/aptitud.service';
+import { LoginService } from 'src/app/service/login.service';
 
 
 @Component({
@@ -15,8 +16,13 @@ export class HyssComponent implements OnInit {
   public aptitudes:Aptitud[]=[];
   public editAptitud: Aptitud | undefined;
   public deleteAptitud: Aptitud | undefined;
+  public estaLogeado: Boolean | undefined;
 
-  constructor(private aptitudService : AptitudService) { }
+  constructor(private aptitudService : AptitudService, private loginService : LoginService) {
+    this.loginService.estadoLogeadoSubject.subscribe(data => {
+      this.estaLogeado = data;
+    });
+   }
 
   ngOnInit(): void {
 

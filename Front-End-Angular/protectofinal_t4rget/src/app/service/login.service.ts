@@ -17,7 +17,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) {
     this.estadoLogeadoSubject= new BehaviorSubject<boolean>(false);
-    console.log("el servicio de autenticacion esta en espera/corriendo");
+    //console.log("el servicio de autenticacion esta en espera/corriendo");
     this.currentUserSubject=new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser')||'{}'));
     this.currentUserSubject.subscribe(user => {
     this.estadoLogeadoSubject.next(user && user.accessToken);
@@ -37,13 +37,12 @@ export class LoginService {
   Logout(): void {
     sessionStorage.removeItem('currentUser');
     this.currentUserSubject.next({});
-    console.log("logout")
+    //console.log("logout")
     this.estadoLogeadoSubject.next(false);
   }
 
   get UsuarioAutenticado() {
     return this.currentUserSubject.value;
-    console.log("VALUE", this.currentUserSubject.value)
   }
 
   estaLogeado(): Boolean {

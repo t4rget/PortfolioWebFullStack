@@ -15,7 +15,7 @@
         <p>{{experiencia.direccionExp}} ({{experiencia.ciudadExp}})</p>
         <p>{{experiencia.provinciaExp}} ({{experiencia.paisExp}})</p>
       </div>
-      <div class="row">
+      <div *ngIf="estaLogeado" class="row">
         <a
           type="button"
           (click)="onOpenModal('edit',experiencia)"
@@ -37,7 +37,7 @@
       </div>
     </div>
     </ul>
-    <div id="div-add" class="text-center">
+    <div *ngIf="estaLogeado" id="div-add" class="text-center">
       <!-- Button trigger modal -->
       <button id="btn-add" type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addExperienciaModal">
         <a>

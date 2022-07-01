@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-educacion',
@@ -14,8 +15,13 @@ export class EducacionComponent implements OnInit {
   public educacions:Educacion[]=[];
   public editEducacion: Educacion | undefined;
   public deleteEducacion: Educacion | undefined;
+  public estaLogeado: Boolean | undefined;
 
-  constructor(private educacionService : EducacionService) { }
+  constructor(private educacionService : EducacionService, private loginService : LoginService) {
+    this.loginService.estadoLogeadoSubject.subscribe(data => {
+      this.estaLogeado = data;
+    });
+   }
 
   ngOnInit(): void {
 

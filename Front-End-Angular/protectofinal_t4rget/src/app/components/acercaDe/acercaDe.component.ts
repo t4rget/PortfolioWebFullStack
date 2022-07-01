@@ -15,7 +15,7 @@ export class AcercaDeComponent implements OnInit {
   public persona : Persona | undefined;
   public editPersona : Persona | undefined;
   public editaPersona : Persona | undefined;
-  public estaLogeado : Boolean | undefined=false;
+  public estaLogeado : Boolean | undefined;
 
   constructor(private personaService : PersonaService, private loginService : LoginService) {
     this.loginService.estadoLogeadoSubject.subscribe(data => {

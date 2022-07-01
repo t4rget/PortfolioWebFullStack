@@ -13,7 +13,7 @@
         <p>{{educacion.tituloEdu}}</p>
         <p>{{educacion.finEdu}}-{{educacion.iniEdu}}</p>
       </div>
-      <div class="row">
+      <div *ngIf="estaLogeado" class="row">
         <a
           type="button"
           (click)="onOpenModal('edit',educacion)"
@@ -35,7 +35,7 @@
       </div>
     </div>
     </ul>
-    <div id="div-add" class="text-center">
+    <div *ngIf="estaLogeado" id="div-add" class="text-center">
       <!-- Button Modal Añadir -->
       <button id="btn-add" type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addEducacionModal">
         <a>

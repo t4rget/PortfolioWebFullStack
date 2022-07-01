@@ -12,7 +12,7 @@
         <h3>{{proyecto.tituloPro}}</h3>
         <p>{{proyecto.fechaPro}} - {{proyecto.sobrePro}}</p>
       </div>
-      <div class="row">
+      <div *ngIf="estaLogeado" class="row">
         <a
           type="button"
           (click)="onOpenModal('edit',proyecto)"
@@ -34,7 +34,7 @@
       </div>
     </div>
     </ul>
-    <div id="div-add" class="text-center">
+    <div *ngIf="estaLogeado" id="div-add" class="text-center">
       <!-- Button trigger modal -->
       <button id="btn-add" type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addProyectoModal">
         <a>

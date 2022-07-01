@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Experiencia } from 'src/app/model/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -14,8 +15,13 @@ export class ExperienciaComponent implements OnInit {
   public experiencias:Experiencia[]=[];
   public editExperiencia: Experiencia | undefined;
   public deleteExperiencia: Experiencia | undefined;
+  public estaLogeado: Boolean | undefined;
 
-  constructor(private experienciaService : ExperienciaService) { }
+  constructor(private experienciaService : ExperienciaService, private loginService : LoginService) {
+    this.loginService.estadoLogeadoSubject.subscribe(data => {
+      this.estaLogeado = data;
+    });
+   }
 
   ngOnInit(): void {
 
