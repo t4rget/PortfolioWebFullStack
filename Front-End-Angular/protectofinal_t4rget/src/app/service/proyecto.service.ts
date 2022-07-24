@@ -9,7 +9,7 @@ import { Proyecto } from '../model/proyecto';
 })
 export class ProyectoService {
 
-  private apiServerUrl=environment.apiBaseUrl;
+  private apiServerUrl='https://appportfolioback.herokuapp.com';
 
   constructor(private http: HttpClient) { }
 
