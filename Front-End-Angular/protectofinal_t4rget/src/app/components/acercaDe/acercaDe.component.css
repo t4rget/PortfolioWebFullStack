@@ -98,6 +98,68 @@ button {
 
 }
 
+@media only screen and (max-width: 461px) {
+  /* For small smartphones */
+  #info-img {
+    left: 26%;
+    bottom: 275px;
+  }
+
+  #info-data {
+    display: block;
+  }
+
+  #info-contact {
+    text-align: center;
+    width: 100%;
+  }
+
+  #info-details {
+    display: block;
+    padding-left: 0;
+    float: none;
+  }
+
+  h4 {
+    align-self: center;
+  }
+
+  #image-banner {
+    height: 310px;
+  }
+}
+
+@media only screen and (max-width: 407px) {
+  /* For small smartphones */
+  #info-img {
+    left: 21%;
+    bottom: 315px;
+  }
+
+  #info-data {
+    display: block;
+  }
+
+  #info-contact {
+    text-align: center;
+    width: 100%;
+  }
+
+  #info-details {
+    display: block;
+    padding-left: 0;
+    float: none;
+  }
+
+  h4 {
+    align-self: center;
+  }
+
+  #image-banner {
+    height: 310px;
+  }
+}
+
 #info-pad {
   margin-top: 50px;
 }

@@ -1,11 +1,249 @@
+<div id="redess">
+    <!-- Button Modal Añadir -->
+    <button *ngIf="estaLogeado" id="btn-add" type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addRedesModal">
+      <a>
+        <i class="bi bi-plus-square"></i>
+      <span class="sr-only">(current)</span>
+      </a>
+    </button>
+    <div *ngFor="let redes of redess" id="redSocial">
+      <a href={{redes.link_red}}><img src={{redes.url_logo}} id={{redes.idRed}}></a>
+      <div *ngIf="estaLogeado" class="row">
+        <a
+          type="button"
+          (click)="onOpenModal('edit',redes)"
+          class="btn btn-outline-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#editRedesModal"
+          id="btn-edit">
+        <i class="bi bi-pencil-square"></i>
+        </a>
+        <a
+          type="button"
+          (click)="onOpenModal('delete',redes)"
+          class="btn btn-outline-danger"
+          data-bs-toggle="modal"
+          data-bs-target="#deleteRedesModal"
+          id="btn-delete"
+        ><i class="bi bi-x-square"></i>
+        </a>
+      </div>
+    </div>
+</div>
+  <!-- Modal añadir red socialredes -->
 <div>
-    <a href="www.linkedin.com/in/jonathan-a-taron-1a671123a"><img src="../../../assets/logos/linkedin.png" id="linkedin"></a>
-    <a href="https://github.com/t4rget"><img src="../../../assets/logos/github.png" id="github"></a>
-    <!--<a href=""><img src="../../../assets/logos/hackthebox.svg" id="hackthebox"></a>
-    <a href=""><img src="../../../assets/logos/telegram.png" id="telegram"></a>
-    <a href=""><img src="../../../assets/logos/instagram.png" id="instagram"></a>
-    --><a href="https://twitter.com/Teiron_Decio"><img src="../../../assets/logos/twitter.png" id="twitter"></a>
-    <!--<a href=""><img src="../../../assets/logos/facebook.png" id="facebook"></a>
-    <a href=""><img src="../../../assets/logos/vksocial.png" id="vksocial"></a>
-    -->
+  <div class="modal fade" id="addRedesModal"
+      tabindex="-1" aria-labelledby="addRedesModalLabel"
+      aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addRedesModalLabel">Añadir Redes</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #addForm="ngForm" (ngSubmit)="onAddRedes(addForm)">
+            <div class="form-group">
+              <label for="nombre_red">Red Social</label>
+              <input type="text"
+                ngModel
+                name="nombre_red"
+                class="form-control"
+                id="nombre_red"
+                placeholder="ej: GitHub"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="link_red">URL Red Social</label>
+              <input type="text"
+                ngModel
+                name="link_red"
+                class="form-control"
+                id="link_red"
+                placeholder="ej: github.com"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="url_logo">Logo Red Social</label>
+              <input type="text"
+                ngModel
+                name="url_logo"
+                class="form-control"
+                id="url_logo"
+                placeholder="github.png"
+                required />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            id="add-redes-form"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cerrar
+          </button>
+          <button
+            (click)="onAddRedes(addForm)"
+            class="btn btn-primary">
+            Guardar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal editar  redes -->
+
+  <div
+      class="modal fade"
+      id="editRedesModal"
+      tabindex="-1"
+      aria-labelledby="redesEditModalLabel"
+      aria-hidden="true"
+    >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateRedesModalLabel">
+            Editar {{editRedes?.nombre_red}}
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+          </button>
+        </div>
+        <div class="modal-body">
+          <form #editForm="ngForm">
+            <div class="form-group">
+              <label for="name">Red Social</label>
+              <input
+                type="text"
+                ngModel="{{editRedes?.nombre_red}}"
+                name="nombre_red"
+                class="form-control"
+                id="nombre_red"
+                aria-describedby="emailHelp"
+                placeholder="Nombre Red Social"
+              />
+            </div>
+            <input
+              type="hidden"
+              ngModel="{{editRedes?.idRed}}"
+              name="idRed"
+              class="form-control"
+              id="idRed"
+              placeholder=""
+            />
+            <div class="form-group">
+              <label for="link_red">URL Red Social</label>
+              <input type="text"
+                ngModel="{{editRedes?.link_red}}"
+                name="link_red"
+                class="form-control"
+                id="link_red"
+                placeholder="redsocial.com"
+              />
+            </div>
+            <div class="form-group">
+              <label for="url_logo">Logo Red Social</label>
+              <input type="text"
+                ngModel="{{editRedes?.url_logo}}"
+                name="url_logo"
+                class="form-control"
+                id="url_logo"
+                placeholder="redsocial.png"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            id=""
+            data-bs-dismiss="modal"
+            class="btn btn-secondary"
+          >
+          Salir
+          </button>
+          <button
+            (click)="onUpdateRedes(editForm.value)"
+            data-bs-dismiss="modal"
+            class="btn btn-primary"
+          >
+          Confirmar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal borrar redes -->
+
+  <div
+
+    class="modal fade"
+    id="deleteRedesModal"
+    tabindex="-1"
+    aria-labelledby="deleteModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Borrar Redes</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            ¿ Estas seguro que quieres borrar
+            <b>{{deleteRedes?.nombre_red}}</b> ?
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+            id=""
+          >
+            Salir
+          </button>
+          <button
+            (click)="onDeleteRedes(deleteRedes!.idRed)"
+            class="button btn btn-danger"
+            data-bs-dismiss="modal"
+          >
+            Confirmar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notificacions Sin Redes -->
+
+  <div *ngIf="redess?.length == 0" class="col-auto">
+    <div class="alert alert-info" role="alert">
+      <h4 class="alert-heading">PODES AGREGAR REDES SOCIALES!</h4>
+      <p>Sin redes sociales.</p>
+    </div>
+  </div>
+
 </div>

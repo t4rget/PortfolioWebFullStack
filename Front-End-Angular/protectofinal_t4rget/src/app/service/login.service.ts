@@ -11,7 +11,7 @@ import { datos } from './interceptor.service';
 export class LoginService {
 
 
-  url = 'https://appportfolioback.herokuapp.com//api/login';
+  url = 'https://appportfolioback.herokuapp.com/api/login';
   currentUserSubject: BehaviorSubject<any>;
   estadoLogeadoSubject: BehaviorSubject<boolean>;
 
