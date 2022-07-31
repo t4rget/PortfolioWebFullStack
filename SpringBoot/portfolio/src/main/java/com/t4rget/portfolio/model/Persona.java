@@ -1,6 +1,9 @@
 package com.t4rget.portfolio.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 //import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +11,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 //import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
@@ -75,5 +81,20 @@ public class Persona implements Serializable{ //VER PARA QUE SIRVE EL SERIALIZAB
     private  List<Experiencia> experienciaList;
 */
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "persona_educacion",
+            joinColumns = @JoinColumn(name = "persona_id"),
+            inverseJoinColumns = @JoinColumn(name = "educacion_id")
+    )
+    private List<Educacion> educaciones = new ArrayList<Educacion>();
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "persona_experiencia",
+            joinColumns = @JoinColumn(name = "persona_id"),
+            inverseJoinColumns = @JoinColumn(name = "experiencia_id")
+    )
+    private List<Experiencia> expericencias = new ArrayList<Experiencia>();
         
 }
