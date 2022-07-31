@@ -9,7 +9,7 @@ import { Aptitud } from '../model/aptitud';
 })
 export class AptitudService {
 
-     private apiServerUrl='https://appportfolioback.herokuapp.com';
+     private apiServerUrl='https://app-portfolio-ap.herokuapp.com';
 
   constructor(private http: HttpClient) { }
 

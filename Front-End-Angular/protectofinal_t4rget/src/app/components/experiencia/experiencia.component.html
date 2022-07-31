@@ -5,8 +5,8 @@
     </div>
     <ul *ngFor="let experiencia of experiencias" id="exp-card" class="mt-4">
       <div id="data-exp" class="btn-edit">
-      <a href="#">
-        <img class="img-responsive" id="img-exp" src="../../../assets/logos/mde.jpeg"> <!--logo mde-->
+      <a href="{{experiencia.urlExp}}">
+        <img class="img-responsive" id="img-exp" src="{{experiencia.logoExp}}"> <!--logo mde-->
       </a>
       <div id="data-edd">
         <h3>{{experiencia.cargoExp}}</h3>
@@ -126,6 +126,26 @@
                 class="form-control"
                 id="empresaExp"
                 placeholder="ej: Amazon"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="urlExp">URL Empresa</label>
+              <input type="text"
+                ngModel
+                name="urlExp"
+                class="form-control"
+                id="urlExp"
+                placeholder="ej: www.google.com"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="logoExp">URL Logo Empresa</label>
+              <input type="text"
+                ngModel
+                name="logoExp"
+                class="form-control"
+                id="logoExp"
+                placeholder="ej: google.png"
                 required />
             </div>
             <div class="form-group">
@@ -284,6 +304,26 @@
                 class="form-control"
                 id="empresaExp"
                 placeholder="ej: Amazon"
+              />
+            </div>
+            <div class="form-group">
+              <label for="urlExp">URL Empresa</label>
+              <input type="text"
+                ngModel="{{editExperiencia?.urlExp}}"
+                name="urlExp"
+                class="form-control"
+                id="urlExp"
+                placeholder="ej: www.google.com"
+              />
+            </div>
+            <div class="form-group">
+              <label for="logoExp">URL Logo Empresa</label>
+              <input type="text"
+                ngModel="{{editExperiencia?.logoExp}}"
+                name="logoExp"
+                class="form-control"
+                id="logoExp"
+                placeholder="ej: google.png"
               />
             </div>
             <div class="form-group">

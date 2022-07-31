@@ -31,10 +31,12 @@ public class Experiencia {
     private String ciudadExp;
     private String provinciaExp;
     private String paisExp;
+    private String urlExp;
+    private String logoExp;
     
     // CONTRUCTOR
 
-    public Experiencia(Long idExp, int iniExp, int finExp, int trabajoActExp, String empresaExp, String cargoExp, String tipoEmpleoExp, String direccionExp, String ciudadExp, String provinciaExp, String paisExp) {
+    public Experiencia(Long idExp, int iniExp, int finExp, int trabajoActExp, String empresaExp, String cargoExp, String tipoEmpleoExp, String direccionExp, String ciudadExp, String provinciaExp, String paisExp, String urlExp, String logoExp) {
         this.idExp = idExp;
         this.iniExp = iniExp;
         this.finExp = finExp;
@@ -46,7 +48,11 @@ public class Experiencia {
         this.ciudadExp = ciudadExp;
         this.provinciaExp = provinciaExp;
         this.paisExp = paisExp;
+        this.urlExp = urlExp;
+        this.logoExp = logoExp;
     }
+
+
 
     // CONTRUCTOR VACIO
 

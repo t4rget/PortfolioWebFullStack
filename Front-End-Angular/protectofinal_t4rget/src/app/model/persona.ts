@@ -9,6 +9,7 @@ export interface Persona {
   paisPer : String;
   tituloPer : String;
   fotoPerfilPer : String;
+  bannerPer : String;
   telefonoPer : String;
   emailPer : String;
   sobreMiPer : String;

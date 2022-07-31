@@ -10,4 +10,6 @@ export interface Experiencia {
   ciudadExp: string;
   provinciaExp: string;
   paisExp: string;
+  logoExp: string;
+  urlExp: string;
 }

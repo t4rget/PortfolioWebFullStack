@@ -33,6 +33,7 @@ public class Persona implements Serializable{ //VER PARA QUE SIRVE EL SERIALIZAB
     private String paisPer;
     private String tituloPer;
     private String fotoPerfilPer;
+    private String bannerPer;
     private String telefonoPer;
     private String emailPer;
     private String sobreMiPer;
@@ -45,7 +46,7 @@ public class Persona implements Serializable{ //VER PARA QUE SIRVE EL SERIALIZAB
 
     //CONTRUCTOR
 
-    public Persona(long id, String nombrePer, String apellidoPer, String direccionPer, String ciudadPer, String provinciaPer, String paisPer, String tituloPer, String fotoPerfilPer, String telefonoPer, String emailPer, String sobreMiPer, String fechaNacPer) {
+    public Persona(long id, String nombrePer, String apellidoPer, String direccionPer, String ciudadPer, String provinciaPer, String paisPer, String tituloPer, String fotoPerfilPer, String bannerPer, String telefonoPer, String emailPer, String sobreMiPer, String fechaNacPer) {
         this.id = id;
         this.nombrePer = nombrePer;
         this.apellidoPer = apellidoPer;
@@ -55,11 +56,11 @@ public class Persona implements Serializable{ //VER PARA QUE SIRVE EL SERIALIZAB
         this.paisPer = paisPer;
         this.tituloPer = tituloPer;
         this.fotoPerfilPer = fotoPerfilPer;
+        this.bannerPer = bannerPer;
         this.telefonoPer = telefonoPer;
         this.emailPer = emailPer;
         this.sobreMiPer = sobreMiPer;
         this.fechaNacPer = fechaNacPer;
-
     }
     
    /* // MAPEADO PARA LA VINCULACION, VER BIEN PARA QUE SIRVE
@@ -73,6 +74,6 @@ public class Persona implements Serializable{ //VER PARA QUE SIRVE EL SERIALIZAB
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "idExp")
     private  List<Experiencia> experienciaList;
 */
-    
+
         
 }

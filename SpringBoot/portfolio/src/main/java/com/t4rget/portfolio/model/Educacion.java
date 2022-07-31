@@ -26,6 +26,7 @@ public class Educacion {
     private String tituloEdu;
     private String urlInstitucionEdu;
     private  String institucionEdu;
+    private String logoEdu;
     
     // CONSTRUCTOR VACIO
 
@@ -34,13 +35,14 @@ public class Educacion {
     
     // CONSTRUCTOR
 
-    public Educacion(Long idEdu, int iniEdu, int finEdu, String tituloEdu, String urlInstitucionEdu, String institucionEdu) {
+    public Educacion(Long idEdu, int iniEdu, int finEdu, String tituloEdu, String urlInstitucionEdu, String institucionEdu, String logoEdu) {
         this.idEdu = idEdu;
         this.iniEdu = iniEdu;
         this.finEdu = finEdu;
         this.tituloEdu = tituloEdu;
         this.urlInstitucionEdu = urlInstitucionEdu;
         this.institucionEdu = institucionEdu;
+        this.logoEdu = logoEdu;
     }    
         
 }

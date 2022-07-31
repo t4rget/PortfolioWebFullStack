@@ -5,4 +5,5 @@ export interface Educacion {
   tituloEdu: string;
   institucionEdu: number;
   urlInstitucionEdu: string;
+  logoEdu: string;
 }

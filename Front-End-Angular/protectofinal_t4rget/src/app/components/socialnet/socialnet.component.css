@@ -47,6 +47,7 @@ img {
 
 #redSocial {
   display: flex;
+  margin-left: 10px;
 }
 
 /*.modal-dialog, .modal-body, .modal-header, .modal-content {
@@ -55,7 +56,7 @@ img {
 
 @media only screen and (max-width: 461px) {
 
-  div {
+  #redess {
     display: none;
   }
 }

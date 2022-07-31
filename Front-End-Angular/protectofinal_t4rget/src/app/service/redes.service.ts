@@ -8,7 +8,7 @@ import { Redes } from '../model/redes';
 })
 export class RedesService {
 
-  private apiServerUrl='https://appportfolioback.herokuapp.com';
+  private apiServerUrl='https://app-portfolio-ap.herokuapp.com';
 
   constructor(private http: HttpClient) { }
 

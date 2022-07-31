@@ -1,10 +1,10 @@
 <div *ngIf="persona" class="card" id="info-card">
 
-  <img class="img-responsive" id="image-banner" src="../../../assets/perfil/portada.jpg_large"> <!--imagen de banner-->
+  <img class="img-responsive" id="image-banner" src="{{persona.bannerPer}}"> <!--imagen de banner-->
 
   <div id="info-pad" style="padding: 16px">
   <div id="info-img">
-    <img class="rounded-circle" id="image-profile" src="../../../assets/perfil/avatar.jpg"> <!--imagen de perfil-->
+    <img class="rounded-circle" id="image-profile" src="{{persona.fotoPerfilPer}}"> <!--imagen de perfil-->
     <div *ngIf="estaLogeado" class="btn-edit">
       <!--<a href="http://" class="btn-right"><i class="fa fa-edit"></i></a>-->
       <a
@@ -24,7 +24,11 @@
       <div id="info-company">{{persona.tituloPer}}</div>
       <div id="info-contacto">
         <span>{{persona.provinciaPer}} ({{persona.paisPer}})  </span>
-        <span><a href="#">Informacion de contacto</a></span>
+        <span><a (click)="onOpenModal('info',persona)"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#infoPersonaModal"
+                id="info-btn">Informacion de contacto</a></span>
       </div>
       <!-- <div id="info-actions">
         <button type="button" class="btn btn-primary">Tengo interes en</button>
@@ -51,10 +55,10 @@
     <div *ngIf="estaLogeado"  class="row">
           <a
             type="button"
-            (click)="onOpenModal('edita',persona)"
+            (click)="onOpenModal('info',persona)"
             class="btn btn-outline-primary"
             data-bs-toggle="modal"
-            data-bs-target="#editaPersonaModal"
+            data-bs-target="#infoPersonaModal"
             id="btn-edit">
           <i class="bi bi-pencil-square"></i>
           </a>
@@ -63,9 +67,67 @@
   <p class="mt-4">{{persona?.sobreMiPer}}</p>
 </div>
 
-<!-- MOdal edita Persona -->
+  <!-- Modal info Persona-->
 
-<!-- Modal editar  Acerca de -->
+    <div
+    class="modal fade"
+    id="infoPersonaModal"
+    tabindex="-1"
+    aria-labelledby="personaEditModalLabel"
+    aria-hidden="true"
+  >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updatePersonaModalLabel">
+          <b>Informacion de contacto</b>
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #editForm="ngForm">
+          <input
+            type="hidden"
+            class="form-control"
+            id="sobreMiPer"
+            ngModel="{{infoPersona?.sobreMiPer}}"
+            name="sobreMiPer"
+            placeholder="Reseña de persona"
+          />
+          <input
+            type="hidden"
+            ngModel="{{infoPersona?.id}}"
+            name="id"
+            class="form-control"
+            id="id"
+            placeholder=""
+          />
+          <label for="nombrePer">Email</label>
+          <h6>{{infoPersona?.emailPer}}</h6>
+          <label for="telefonoPer">Telefono</label>
+          <h6>{{infoPersona?.telefonoPer}}</h6>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          id=""
+          data-bs-dismiss="modal"
+          class="btn btn-secondary"
+        >
+        Salir</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+<!-- MOdal edita Persona -->
 
   <div
       class="modal fade"
@@ -176,6 +238,15 @@
               name="fotoPerfilPer"
               class="form-control"
               id="fotoPerfilPer"
+              placeholder=""
+            />
+            <label for="bannerPer">URL Banner</label>
+            <input
+              type="text"
+              ngModel="{{editPersona?.bannerPer}}"
+              name="bannerPer"
+              class="form-control"
+              id="bannerPer"
               placeholder=""
             />
             <label for="telefonoPer">Telefono</label>
@@ -334,6 +405,14 @@
               name="fotoPerfilPer"
               class="form-control"
               id="fotoPerfilPer"
+              placeholder=""
+            />
+            <input
+              type="hidden"
+              ngModel="{{editaPersona?.bannerPer}}"
+              name="bannerPer"
+              class="form-control"
+              id="bannerPer"
               placeholder=""
             />
             <input

@@ -14,6 +14,7 @@ export class AcercaDeComponent implements OnInit {
 
   public persona : Persona | undefined;
   public editPersona : Persona | undefined;
+  public infoPersona : Persona | undefined;
   public editaPersona : Persona | undefined;
   public estaLogeado : Boolean | undefined;
 
@@ -71,6 +72,9 @@ export class AcercaDeComponent implements OnInit {
     }else if(mode==='edit'){
       this.editPersona = persona;
       button.setAttribute('data-target', '#editPersonaModal')
+    }else if(mode==='info'){
+      this.infoPersona = persona;
+      button.setAttribute('data-target', '#infoPersonaModal')
     }else if(mode==='edita'){
       this.editaPersona = persona;
       button.setAttribute('data-target', '#editaPersonaModal')

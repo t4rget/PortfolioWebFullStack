@@ -5,8 +5,8 @@
     </div>
     <ul *ngFor="let educacion of educacions" id="exp-card" class="mt-4">
       <div id="data-exp" class="btn-edit">
-      <a href="#">
-        <img class="img-responsive" id="img-exp" src="../../../assets/logos/unam.png"> <!--logo mde-->
+      <a href="{{educacion.urlInstitucionEdu}}">
+        <img class="img-responsive" id="img-exp" src="{{educacion.logoEdu}}"> <!--logo mde-->
       </a>
       <div id="data-edd">
         <h3>{{educacion.institucionEdu}}</h3>
@@ -113,6 +113,16 @@
                 name="urlInstitucionEdu"
                 class="form-control"
                 id="urlInstitucionEdu"
+                placeholder="ej: www.institucion.com"
+                required />
+            </div>
+            <div class="form-group">
+              <label for="logoEdu">URL Logo Instituto</label>
+              <input type="text"
+                ngModel
+                name="logoEdu"
+                class="form-control"
+                id="logoEdu"
                 placeholder="ej: logo.png"
                 required />
             </div>
@@ -221,6 +231,16 @@
                 class="form-control"
                 id="urlInstitucionEdu"
                 placeholder="UrlEdu"
+              />
+            </div>
+            <div class="form-group">
+              <label for="logoEdu">URL Logo Instituto</label>
+              <input type="text"
+                ngModel="{{editEducacion?.urlInstitucionEdu}}"
+                name="logoEdu"
+                class="form-control"
+                id="logoEdu"
+                placeholder="logoEdu"
               />
             </div>
           </form>

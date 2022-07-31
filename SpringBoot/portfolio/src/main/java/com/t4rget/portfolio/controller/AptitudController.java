@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "https://portfolioap-a7790.web.app/")
 @RequestMapping("/api/aptitud")
 public class AptitudController {
     

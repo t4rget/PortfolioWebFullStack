@@ -4,9 +4,9 @@
       <h1 class="mt-3">Proyectos</h1>
     </div>
     <ul *ngFor="let proyecto of proyectos" id="exp-card" class="mt-4">
-      <div id="data-exp" class="btn-edit">
-      <a href="#">
-        <img class="img-responsive" id="img-exp" src="../../../assets/logos/unam.png"> <!--logo proyecto-->
+      <div id="data-pro" class="btn-edit">
+      <a href="{{proyecto.urlPro}}">
+        <img class="img-responsive" id="img-exp" src="{{proyecto.urlImagenPro}}"> <!--logo proyecto-->
       </a>
       <div id="data-edd">
         <h3>{{proyecto.tituloPro}}</h3>
